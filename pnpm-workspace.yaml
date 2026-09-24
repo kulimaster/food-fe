@@ -3,3 +3,7 @@
 peerDependencyRules:
   allowedVersions:
     eslint-plugin-jsx-a11y>eslint: '10'
+
+# Dependency install scripts are blocked by default; decide explicitly per package.
+allowBuilds:
+  lefthook: false # hooks are installed by our own "prepare" script instead

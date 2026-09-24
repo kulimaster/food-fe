@@ -1,0 +1,25 @@
+# Git hooks – https://lefthook.dev
+# Installed automatically by `pnpm install` (the "prepare" script).
+
+pre-commit:
+  parallel: true
+  jobs:
+    - name: eslint
+      glob: '*.{js,ts,tsx}'
+      run: pnpm exec eslint --fix --max-warnings 0 {staged_files}
+      stage_fixed: true
+    - name: prettier
+      glob: '*.{js,ts,tsx,css,json,md,yml,yaml,html}'
+      exclude:
+        - 'prototype/**'
+        - 'pnpm-lock.yaml'
+      run: pnpm exec prettier --write --ignore-unknown {staged_files}
+      stage_fixed: true
+
+pre-push:
+  parallel: true
+  jobs:
+    - name: typecheck
+      run: pnpm typecheck
+    - name: unit tests
+      run: pnpm test:run
