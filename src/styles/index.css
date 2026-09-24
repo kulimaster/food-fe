@@ -1,0 +1,12 @@
+@import '@fontsource-variable/inter';
+@import 'tailwindcss';
+@import './theme.css';
+
+/* Stitch prototype HTML is reference material, not app code – don't generate classes from it */
+@source not '../../prototype';
+
+@layer base {
+  html {
+    @apply bg-background font-sans text-on-background antialiased;
+  }
+}
