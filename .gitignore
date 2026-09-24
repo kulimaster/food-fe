@@ -17,6 +17,7 @@ playwright/.cache/
 # Env (commit only .env.example)
 .env
 .env.*
+*.local
 !.env.example
 
 # Logs
