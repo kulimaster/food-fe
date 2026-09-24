@@ -10,8 +10,8 @@ Poslední aktualizace: 2026-09-24
 - Dokumentace: `docs/frontend-plan.md`, `docs/repo-structure.md`, tento soubor,
   `docs/decisions/0001-separate-repositories.md`
 - `CLAUDE.md`, `README.md`, `.gitignore`, `.editorconfig`
-- **Chybí `.claude/settings.json`** (přístup k `../food-be` přes `additionalDirectories`, oprávnění
-  podle vzoru z `food-be`). Claude ho nesmí vytvořit sám, musí ho přidat uživatel.
+- `.claude/settings.json`: přístup k `../food-be` přes `additionalDirectories`, oprávnění podle vzoru
+  z `food-be` (`git commit` a `git push` vždy vyžadují potvrzení)
 - Zatím žádný kód, projekt není založený
 
 ## Rozhodnuto v této session
