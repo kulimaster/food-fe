@@ -1,0 +1,5 @@
+# eslint-plugin-jsx-a11y (6.10.2) hasn't declared ESLint 10 support yet, but only uses
+# context.options/report/settings, which ESLint 10 still provides. Remove once it does.
+peerDependencyRules:
+  allowedVersions:
+    eslint-plugin-jsx-a11y>eslint: '10'

@@ -22,22 +22,22 @@ Souhrn dohodnutých technologií a postupu pro React frontend aplikace NutriPlan
 
 ## Stack
 
-| Oblast | Nástroj | K čemu |
-|---|---|---|
-| Build a vývoj | Vite + TypeScript | Založení, spouštění a build projektu, typová kontrola |
-| Správce balíčků | pnpm (přes corepack) | Instalace závislostí, lockfile |
-| Routing | React Router | Přechody mezi obrazovkami |
-| Data z API | TanStack Query | Načítání dat, cache, loading a chybové stavy |
-| Formuláře | React Hook Form + Zod | Formuláře a validace |
-| API klient | Generovaný z OpenAPI (`openapi-typescript` + `openapi-fetch`) | Typy entit přímo z backendu |
-| Mockování | MSW (Mock Service Worker) | Mocky pro testy, Storybook a vývoj bez běžícího backendu |
-| Katalog komponent | Storybook (+ addon a11y) | Design systém a komponenty izolovaně |
-| Lint a formátování | ESLint (flat config, `jsx-a11y`) + Prettier (`prettier-plugin-tailwindcss`) | Jednotný styl, odhalení chyb |
-| Unit a komponentové testy | Vitest + Testing Library | Logika, hooky, komponenty |
-| E2E testy | Playwright | Klíčové uživatelské scénáře v prohlížeči |
-| Git hooky | lefthook + lint-staged | Lint a formát před commitem |
-| CI | GitHub Actions | Typecheck, lint, testy, build na každý PR |
-| Závislosti | Dependabot | Pravidelné aktualizace |
+| Oblast                    | Nástroj                                                                     | K čemu                                                   |
+| ------------------------- | --------------------------------------------------------------------------- | -------------------------------------------------------- |
+| Build a vývoj             | Vite + TypeScript                                                           | Založení, spouštění a build projektu, typová kontrola    |
+| Správce balíčků           | pnpm (přes corepack)                                                        | Instalace závislostí, lockfile                           |
+| Routing                   | React Router                                                                | Přechody mezi obrazovkami                                |
+| Data z API                | TanStack Query                                                              | Načítání dat, cache, loading a chybové stavy             |
+| Formuláře                 | React Hook Form + Zod                                                       | Formuláře a validace                                     |
+| API klient                | Generovaný z OpenAPI (`openapi-typescript` + `openapi-fetch`)               | Typy entit přímo z backendu                              |
+| Mockování                 | MSW (Mock Service Worker)                                                   | Mocky pro testy, Storybook a vývoj bez běžícího backendu |
+| Katalog komponent         | Storybook (+ addon a11y)                                                    | Design systém a komponenty izolovaně                     |
+| Lint a formátování        | ESLint (flat config, `jsx-a11y`) + Prettier (`prettier-plugin-tailwindcss`) | Jednotný styl, odhalení chyb                             |
+| Unit a komponentové testy | Vitest + Testing Library                                                    | Logika, hooky, komponenty                                |
+| E2E testy                 | Playwright                                                                  | Klíčové uživatelské scénáře v prohlížeči                 |
+| Git hooky                 | lefthook + lint-staged                                                      | Lint a formát před commitem                              |
+| CI                        | GitHub Actions                                                              | Typecheck, lint, testy, build na každý PR                |
+| Závislosti                | Dependabot                                                                  | Pravidelné aktualizace                                   |
 
 ## Postup
 
@@ -69,16 +69,16 @@ Souhrn dohodnutých technologií a postupu pro React frontend aplikace NutriPlan
 Předlohou UI je export ze Google Stitch v `prototype/` (každá obrazovka `mobile/` a `desktop/`,
 v každé `code.html` + `screen.png`):
 
-| Obrazovka v plánu | Prototyp |
-|---|---|
-| Dashboard | `daily-dashboard/` |
-| Ingredients | `ingredients-database/` |
-| Recipes (recipe builder) | `recipe-builder/` |
+| Obrazovka v plánu              | Prototyp                                                         |
+| ------------------------------ | ---------------------------------------------------------------- |
+| Dashboard                      | `daily-dashboard/`                                               |
+| Ingredients                    | `ingredients-database/`                                          |
+| Recipes (recipe builder)       | `recipe-builder/`                                                |
 | Weekly Planner + Shopping List | `weekly-planner-shopping-list/` (v prototypu na jedné obrazovce) |
-| Přihlášení / onboarding | `login-onboarding/` |
-| Profile | chybí – navrhnout ve stylu Vitality Core |
-| Log Meal | chybí – v dashboardu jen tlačítko „Log Food" |
-| Activity Log | chybí |
+| Přihlášení / onboarding        | `login-onboarding/`                                              |
+| Profile                        | chybí – navrhnout ve stylu Vitality Core                         |
+| Log Meal                       | chybí – v dashboardu jen tlačítko „Log Food"                     |
+| Activity Log                   | chybí                                                            |
 
 Prototyp obsahuje i prvky mimo dohodnutý rozsah (hydratace / příjem vody, „Recipe of the Day",
 týdenní trend). Hydrataci backend nemá vůbec (žádná entita ani endpoint); recept dne a trend by
