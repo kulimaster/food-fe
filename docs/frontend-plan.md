@@ -1,19 +1,23 @@
-# Food – plán frontendu
+# NutriPlan – plán frontendu
 
-Souhrn dohodnutých technologií a postupu pro React frontend aplikace Food.
+Souhrn dohodnutých technologií a postupu pro React frontend aplikace NutriPlan.
 
 ## Rozhodnuto
 
+- **Název aplikace:** NutriPlan (repa zůstávají `food-fe` / `food-be`)
 - **Repozitáře:** frontend (`food-fe`) a backend (`food-be`) jsou samostatná repa, viz
   [repo-structure.md](repo-structure.md)
 - **Backend:** C# / .NET 10, REST API s OpenAPI dokumentem (`/openapi/v1.json`, Scalar UI na
   `/scalar` v Development, lokálně `http://localhost:5201`)
 - **Framework:** React + TypeScript (strict)
-- **Styling:** Tailwind (v4) s vlastními design tokeny převzatými z prototypu
-  - Barvy: papír, inkoust, lesní zelená, zlatá
-  - Font: Barlow Condensed
-  - Vizuální motiv: „Nutrition Facts label" (tlusté černé linky, výrazné kalorie, odsazené řádky maker
-    s progress bary)
+- **Styling:** Tailwind (v4) s design tokeny ze Stitch design systému **Vitality Core**
+  ([`prototype/DESIGN.md`](../prototype/DESIGN.md), rozhodnutí viz
+  [ADR 0002](decisions/0002-design-system-vitality-core.md))
+  - Styl: moderní, čistý, „clean-plate" – hodně prostoru, bílé karty s jemnými stíny, zaoblení
+  - Barvy: primární smaragdová; makra – bílkoviny modrá, sacharidy oranžová, tuky žlutá/amber,
+    vláknina fialová
+  - Font: Inter; ikony Material Symbols (viz „Zbývá rozhodnout")
+  - Mobile-first, prototyp má každou obrazovku ve verzi mobile i desktop
 - **Nástroj pro vývoj:** Claude Code (přes `additionalDirectories` vidí i `../food-be`)
 
 ## Stack
@@ -40,10 +44,11 @@ Souhrn dohodnutých technologií a postupu pro React frontend aplikace Food.
 1. **Založení projektu:** Vite + React + TS (strict) + Tailwind, ESLint, Prettier, Vitest,
    Playwright, git hooky, `.env.example` s typovou validací, CI workflow, Dependabot. Testy
    a kvalita od začátku, ne až na konci.
-2. **Design systém:** tokeny v Tailwindu a základní komponenty (nutriční label, progress bary maker,
-   tlačítka, karty, formulářové prvky), vše rovnou ve Storybooku a s testy
-3. **Kostra aplikace:** providery, routing, layout, navigace, error boundary, stránka 404, osm
-   prázdných obrazovek
+2. **Design systém:** tokeny z `DESIGN.md` v Tailwindu a základní komponenty (kalorický prstenec,
+   progress bary a prstence maker, makro čipy, tlačítka, karty, položka logu, formulářové prvky),
+   vše rovnou ve Storybooku a s testy
+3. **Kostra aplikace:** providery, routing, layout (spodní navigace na mobilu, postranní panel na
+   desktopu), error boundary, stránka 404, prázdné obrazovky
 4. **Napojení na API:** vygenerovaný klient a typy, TanStack Query, jednotné zobrazování chyb z API,
    MSW mocky
 5. **Obrazovky postupně:**
@@ -59,12 +64,33 @@ Souhrn dohodnutých technologií a postupu pro React frontend aplikace Food.
 7. **Doladění:** responzivita pro mobil, E2E pokrytí hlavních scénářů, sběr chyb (např. Sentry),
    build a nasazení
 
-Jako předloha UI a chování slouží HTML prototyp s osmi obrazovkami (`prototype/food-prototype.html`).
+## Prototyp
+
+Předlohou UI je export ze Google Stitch v `prototype/` (každá obrazovka `mobile/` a `desktop/`,
+v každé `code.html` + `screen.png`):
+
+| Obrazovka v plánu | Prototyp |
+|---|---|
+| Dashboard | `daily-dashboard/` |
+| Ingredients | `ingredients-database/` |
+| Recipes (recipe builder) | `recipe-builder/` |
+| Weekly Planner + Shopping List | `weekly-planner-shopping-list/` (v prototypu na jedné obrazovce) |
+| Přihlášení / onboarding | `login-onboarding/` |
+| Profile | chybí – navrhnout ve stylu Vitality Core |
+| Log Meal | chybí – v dashboardu jen tlačítko „Log Food" |
+| Activity Log | chybí |
+
+Prototyp obsahuje i prvky mimo dohodnutý rozsah (hydratace / příjem vody, „Recipe of the Day",
+týdenní trend). Hydrataci backend nemá vůbec (žádná entita ani endpoint); recept dne a trend by
+bylo potřeba ověřit. Bez dohody se neimplementují.
 
 ## Zbývá rozhodnout
 
 - [ ] Autentizace: backend navrhuje ASP.NET Core Identity + JWT (`food-be/docs/architecture.md`),
       zatím nepotvrzeno a vědomě odloženo. Na frontendu pak volba ukládání tokenu a refresh.
-- [ ] Jazyk UI: čeština, angličtina, nebo i18n od začátku
+- [ ] Jazyk UI: čeština, angličtina, nebo i18n od začátku (prototyp je anglicky)
 - [ ] Hosting frontendu (backend: viz `food-be/docs/deployment.md`)
-- [ ] Doplnit HTML prototyp do `prototype/`
+- [ ] Ikony: Material Symbols jako v prototypu (webfont), nebo knihovna SVG ikon (např. Lucide)
+- [ ] Planner a Shopping List: jedna obrazovka jako v prototypu, nebo dvě
+- [ ] Prvky prototypu mimo rozsah (hydratace, recept dne, týdenní trend): dělat, nebo vynechat
+- [ ] Návrh chybějících obrazovek (Profile, Log Meal, Activity Log)

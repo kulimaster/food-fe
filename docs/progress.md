@@ -8,7 +8,8 @@ Poslední aktualizace: 2026-09-24
 ## Co existuje
 
 - Dokumentace: `docs/frontend-plan.md`, `docs/repo-structure.md`, tento soubor,
-  `docs/decisions/0001-separate-repositories.md`
+  ADR `0001-separate-repositories.md` a `0002-design-system-vitality-core.md`
+- `prototype/`: Stitch export – `DESIGN.md` (Vitality Core), logo, 5 obrazovek (mobile + desktop)
 - `CLAUDE.md`, `README.md`, `.gitignore`, `.editorconfig`
 - `.claude/settings.json`: přístup k `../food-be` přes `additionalDirectories`, oprávnění podle vzoru
   z `food-be` (`git commit` a `git push` vždy vyžadují potvrzení)
@@ -21,6 +22,8 @@ Poslední aktualizace: 2026-09-24
 - Stack doplněn o pnpm, ESLint + Prettier, Vitest + Testing Library, Playwright, lefthook,
   GitHub Actions, Dependabot
 - Testy a CI se nastavují už ve fázi 1
+- Design systém Vitality Core ze Stitche místo motivu „Nutrition Facts label"; název aplikace
+  NutriPlan (ADR 0002)
 
 ## Další krok
 

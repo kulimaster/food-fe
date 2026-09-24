@@ -1,6 +1,6 @@
-# Food – frontend
+# NutriPlan – frontend
 
-React frontend aplikace **Food** pro plánování jídel a sledování výživy (makra, ingredience,
+React frontend aplikace **NutriPlan** pro plánování jídel a sledování výživy (makra, ingredience,
 recepty, log aktivit, týdenní plánovač a nákupní seznam).
 
 Backend (.NET 10, REST API) je v samostatném repozitáři [`food-be`](https://github.com/kulimaster/food-be).
@@ -21,3 +21,4 @@ Projekt je ve fázi plánování, kód zatím neexistuje. Aktuální stav viz
 - [Plán frontendu](docs/frontend-plan.md)
 - [Struktura repozitáře](docs/repo-structure.md)
 - [Stav a další kroky](docs/progress.md)
+- [Design systém Vitality Core](prototype/DESIGN.md) a prototyp obrazovek v `prototype/`

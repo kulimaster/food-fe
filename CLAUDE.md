@@ -4,10 +4,10 @@ Instrukce pro Claude Code (a každého přispěvatele) v tomto repozitáři.
 
 ## O projektu
 
-**Food** je aplikace pro plánování jídel a sledování výživy: denní makra (kalorie, bílkoviny,
+**NutriPlan** je aplikace pro plánování jídel a sledování výživy: denní makra (kalorie, bílkoviny,
 sacharidy, tuky, vláknina), databáze ingrediencí, vlastní recepty, oblíbená jídla, log aktivit
 a týdenní plánovač s nákupním seznamem. Toto repo je **React frontend**. Backend (.NET 10, REST)
-je v samostatném repu `../food-be`.
+je v samostatném repu `../food-be` (repa a backend si ponechávají interní název „Food“).
 
 ## Kde co najdeš
 
@@ -15,7 +15,9 @@ je v samostatném repu `../food-be`.
 - [`docs/frontend-plan.md`](docs/frontend-plan.md) – stack, fáze, otevřená rozhodnutí
 - [`docs/repo-structure.md`](docs/repo-structure.md) – struktura repa a pravidla pro `src/`
 - [`docs/decisions/`](docs/decisions/) – zaznamenaná rozhodnutí (ADR)
-- `prototype/` – HTML prototyp jako předloha UI
+- [`prototype/DESIGN.md`](prototype/DESIGN.md) – **design systém Vitality Core** (tokeny a pravidla)
+- `prototype/<obrazovka>/{mobile,desktop}/` – Stitch prototyp: `code.html` (HTML + Tailwind)
+  a `screen.png`; předloha rozložení a stylu, ne kód ke zkopírování
 - Backend (přístupný přes `additionalDirectories`):
   - `../food-be/docs/business-description.md` – doménová pravidla
   - `../food-be/docs/database-design.md` – entity a schéma
@@ -39,8 +41,10 @@ testy, E2E, lint, typecheck, generování API klienta.
 ## Konvence
 
 - TypeScript všude, `strict`
-- Tailwind jen s našimi design tokeny (papír, inkoust, lesní zelená, zlatá; Barlow Condensed)
-- Vizuální motiv „Nutrition Facts label", vyhnout se generickému dashboardovému vzhledu
+- Tailwind jen s tokeny z `prototype/DESIGN.md` (Vitality Core): font Inter, primární smaragdová,
+  pevné barvy maker – bílkoviny modrá, sacharidy oranžová, tuky žlutá/amber, vláknina fialová
+- Karty bílé se stínem úrovně 1, zaoblení `rounded-lg` (16 px), progress bary „pill“, žádné těžké
+  okraje; mobile-first (4sloupcový grid), desktop 12 sloupců do 1140 px
 - Každá komponenta v `src/components/` má svou story a test
 - Obrazovky a jejich logika patří do `src/features/<doména>/`; feature neimportuje z jiné feature
 - Typy entit se berou z vygenerovaného klienta v `src/api/`, ne ručně
@@ -48,7 +52,8 @@ testy, E2E, lint, typecheck, generování API klienta.
 ## Co nedělat
 
 - Nepřidávat nové knihovny bez domluvy
-- Nepoužívat výchozí barvy Tailwindu mimo tokeny
+- Nepoužívat výchozí barvy Tailwindu mimo tokeny, nepoužívat barvu makra pro jiný účel
+- Nekopírovat `code.html` z prototypu do `src/` jako celek; rozložit ho na komponenty
 - Neupravovat vygenerovaný kód v `src/api/` ručně
 - Nekopírovat backendovou dokumentaci do tohoto repa, odkazovat na ni
 

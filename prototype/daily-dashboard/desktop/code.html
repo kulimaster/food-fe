@@ -1,0 +1,276 @@
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-tertiary-fixed-variant":"#004395","inverse-on-surface":"#eaf1ff","surface-bright":"#f8f9ff","on-primary-fixed":"#002113","background":"#f8f9ff","surface-container-highest":"#d3e4fe","on-secondary":"#ffffff","surface-tint":"#006c49","on-secondary-fixed-variant":"#783200","on-tertiary-container":"#00367a","surface-container-lowest":"#ffffff","primary-fixed":"#6ffbbe","on-tertiary-fixed":"#001a42","surface":"#f8f9ff","on-background":"#0b1c30","surface-container-low":"#eff4ff","error-container":"#ffdad6","secondary-container":"#fd761a","on-primary-container":"#00422b","secondary":"#9d4300","inverse-primary":"#4edea3","on-primary":"#ffffff","on-tertiary":"#ffffff","tertiary-fixed-dim":"#adc6ff","on-secondary-fixed":"#341100","tertiary-fixed":"#d8e2ff","surface-container":"#e5eeff","inverse-surface":"#213145","surface-variant":"#d3e4fe","secondary-fixed-dim":"#ffb690","primary-fixed-dim":"#4edea3","outline":"#6c7a71","on-error-container":"#93000a","outline-variant":"#bbcabf","on-error":"#ffffff","on-secondary-container":"#5c2400","secondary-fixed":"#ffdbca","primary":"#006c49","on-surface-variant":"#3c4a42","tertiary":"#005ac2","surface-container-high":"#dce9ff","primary-container":"#10b981","surface-dim":"#cbdbf5","error":"#ba1a1a","on-surface":"#0b1c30","on-primary-fixed-variant":"#005236","tertiary-container":"#71a1ff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"base":"4px","md":"16px","container-padding":"20px","xs":"4px","gutter":"16px","xl":"32px","sm":"8px","lg":"24px"},"fontFamily":{"headline-md":["Inter"],"display-lg":["Inter"],"body-lg":["Inter"],"body-md":["Inter"],"headline-lg":["Inter"],"headline-lg-mobile":["Inter"],"label-md":["Inter"],"label-sm":["Inter"]},"fontSize":{"headline-md":["24px",{"lineHeight":"32px","fontWeight":"600"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-lg-mobile":["28px",{"lineHeight":"36px","fontWeight":"700"}],"label-md":["14px",{"lineHeight":"20px","letterSpacing":"0.05em","fontWeight":"600"}],"label-sm":["12px",{"lineHeight":"16px","fontWeight":"500"}]}}}}</script><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/></head><body class="bg-background font-body-md text-on-background"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col pt-lg"><div class="px-lg mb-xl flex items-center gap-sm"><img alt="NutriPlan Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBucpIosHXWdJ2knvldeVJeZhjOQ9ga0RdR6jlL0B4YentqCiyxPIoW5CCMyYx-y4itLAs_RfOkZ6n6HLw_ZWeWvvHKN0YM-9VwIUA5ZryWF0kVTOO7Lempu0yqnscCWb3mURKbT-GcYz_gmN5QFu-tXkTMz64dWE_YFY7gKMNeDEc0mQGVoeLLALF0T80uE43QNOChVyKAIqFqWkH7EDP4QddjGdfyatfkcvjlfXpYgy99nwKWlLQUig"/><span class="font-headline-md text-headline-md text-primary">NutriPlan</span></div><nav class="flex-1 px-md flex flex-col gap-sm" data-active-classes="bg-primary-container text-on-primary-container font-headline-md rounded-xl"><a aria-current="page" class="flex items-center px-md py-sm transition-all group bg-primary-container text-on-primary-container font-headline-md rounded-xl" data-path="dashboard" href="#"><span class="material-symbols-outlined mr-md">dashboard</span><span class="font-label-md text-label-md">Dashboard</span></a><a class="flex items-center px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="planner" href="#"><span class="material-symbols-outlined mr-md">calendar_today</span><span class="font-label-md text-label-md">Planner</span></a><a class="flex items-center px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="ingredients" href="#"><span class="material-symbols-outlined mr-md">kitchen</span><span class="font-label-md text-label-md">Ingredients</span></a><a class="flex items-center px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="profile" href="#"><span class="material-symbols-outlined mr-md">person</span><span class="font-label-md text-label-md">Profile</span></a></nav></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-end px-xl gap-lg"><button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined">search</span></button><button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined">notifications</span></button><div class="flex items-center gap-sm cursor-pointer"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQN5OCtcdAvJCJLmvPG1uGBuL6VXodsPOFIANRbGcobssqQIin1DPQxToT4pRg6VpT3PinARZKB0ap7WAtjApQtFqAWsD8oa9AecbIGoCBxlVmXcR5KfrwBTjewKVoAroM-0wSd_SSwy5vUu6UB1XTu41NtSn7Rkp_oBJWl9PTFKs7gcHOh5Rfqj3J2rG7uwhIrNHeR1j6az8QbeaNu_T1wJIr92NXapqPU7JsmtwnWVimdGbOOuMVMg"/></div></header><main class="relative pt-16 min-h-screen bg-background"><div class="flex flex-col w-full h-full relative font-body-md text-on-background">
+<!-- Desktop Grid Layout: Main Content (Left) + Sidebar (Right) -->
+<div class="flex flex-col lg:flex-row gap-lg w-full max-w-[1140px] mx-auto p-container-padding lg:py-xl">
+<!-- MAIN COLUMN -->
+<div class="flex-1 flex flex-col gap-xl w-full min-w-0">
+<!-- Macros Overview (Bento Grid) -->
+<section class="flex flex-col gap-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary">analytics</span> Daily Snapshot
+        </h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<!-- Calories Ring Card -->
+<div class="bg-surface-container rounded-xl p-lg shadow-sm flex flex-col items-center justify-center relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none"></div>
+<div class="relative w-40 h-40 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<!-- Background track -->
+<circle class="text-surface-container-highest" cx="50" cy="50" fill="none" r="40" stroke="currentColor" stroke-width="8"></circle>
+<!-- Progress ring -->
+<circle class="text-primary" cx="50" cy="50" fill="none" r="40" stroke="currentColor" stroke-dasharray="251.2" stroke-dashoffset="62.8" stroke-linecap="round" stroke-width="8" style="transition: stroke-dashoffset 1s ease-out;"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-headline-lg text-headline-lg text-on-surface">1650</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">/ 2200 kcal</span>
+</div>
+</div>
+<p class="mt-4 font-label-md text-label-md text-primary-fixed-dim bg-on-primary-fixed px-sm py-xs rounded-lg text-center">550 kcal remaining</p>
+</div>
+<!-- Macros Linear Bars Card (Spans 2 cols on md) -->
+<div class="bg-surface-container rounded-xl p-lg shadow-sm md:col-span-2 flex flex-col justify-between">
+<div class="flex justify-between items-end mb-md">
+<h3 class="font-headline-md text-headline-md text-on-surface">Macros</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase flex items-center gap-xs"><span class="material-symbols-outlined text-[16px]">info</span> Target progress</span>
+</div>
+<div class="space-y-4 flex-1 flex flex-col justify-center">
+<!-- Protein -->
+<div>
+<div class="flex justify-between text-sm mb-1">
+<span class="font-label-md text-label-md text-tertiary">Protein</span>
+<span class="font-body-md text-body-md text-on-surface-variant">110 / 150g</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary rounded-full transition-all duration-1000 ease-out w-[73%]"></div>
+</div>
+</div>
+<!-- Carbs -->
+<div>
+<div class="flex justify-between text-sm mb-1">
+<span class="font-label-md text-label-md text-secondary">Carbs</span>
+<span class="font-body-md text-body-md text-on-surface-variant">180 / 250g</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full transition-all duration-1000 ease-out w-[72%]"></div>
+</div>
+</div>
+<!-- Fats -->
+<div>
+<div class="flex justify-between text-sm mb-1">
+<span class="font-label-md text-label-md text-secondary-container text-on-secondary-container">Fats</span>
+<span class="font-body-md text-body-md text-on-surface-variant">45 / 70g</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container rounded-full transition-all duration-1000 ease-out w-[64%]"></div>
+</div>
+</div>
+<!-- Fiber -->
+<div>
+<div class="flex justify-between text-sm mb-1">
+<span class="font-label-md text-label-md text-primary">Fiber</span>
+<span class="font-body-md text-body-md text-on-surface-variant">22 / 30g</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-1000 ease-out w-[73%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Meal Logs -->
+<section class="flex flex-col gap-sm relative">
+<div class="flex justify-between items-end">
+<h2 class="font-headline-md text-headline-md text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary">restaurant_menu</span> Today's Log
+            </h2>
+<button class="bg-primary hover:bg-surface-tint text-on-primary font-label-md text-label-md px-md py-sm rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-xs">
+<span class="material-symbols-outlined">add</span> Log Food
+            </button>
+</div>
+<!-- Vertical Timeline Line -->
+<div class="absolute left-[20px] md:left-[28px] top-[48px] bottom-0 w-0.5 bg-surface-container-highest z-0 hidden md:block"></div>
+<div class="flex flex-col gap-md relative z-10 mt-sm">
+<!-- Breakfast -->
+<div class="flex flex-col md:flex-row gap-sm md:gap-md group">
+<div class="md:w-16 flex md:justify-center md:items-start pt-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors z-10 shadow-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bakery_dining</span>
+</div>
+</div>
+<div class="flex-1 bg-surface-container lowest rounded-xl p-md shadow-sm transition-shadow hover:shadow-md">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<h4 class="font-headline-md text-[18px] leading-6 text-on-surface">Breakfast</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-xs">08:30 AM</p>
+</div>
+<span class="font-headline-md text-[18px] leading-6 text-primary">450 kcal</span>
+</div>
+<div class="flex flex-col gap-xs mt-sm bg-surface rounded-lg p-sm">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface">Oatmeal with Berries & Almonds</span>
+<span class="font-label-md text-label-md text-on-surface-variant">320 kcal</span>
+</div>
+<div class="flex justify-between items-center border-t-none">
+<span class="font-body-md text-body-md text-on-surface">Black Coffee</span>
+<span class="font-label-md text-label-md text-on-surface-variant">5 kcal</span>
+</div>
+</div>
+<div class="flex gap-sm mt-md">
+<span class="font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed px-sm py-xs rounded">12g P</span>
+<span class="font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed px-sm py-xs rounded">65g C</span>
+<span class="font-label-sm text-label-sm bg-secondary-fixed-dim text-on-secondary-fixed-variant px-sm py-xs rounded">14g F</span>
+</div>
+</div>
+</div>
+<!-- Lunch -->
+<div class="flex flex-col md:flex-row gap-sm md:gap-md group">
+<div class="md:w-16 flex md:justify-center md:items-start pt-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors z-10 shadow-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">lunch_dining</span>
+</div>
+</div>
+<div class="flex-1 bg-surface-container lowest rounded-xl p-md shadow-sm transition-shadow hover:shadow-md">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<h4 class="font-headline-md text-[18px] leading-6 text-on-surface">Lunch</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-xs">01:15 PM</p>
+</div>
+<span class="font-headline-md text-[18px] leading-6 text-primary">680 kcal</span>
+</div>
+<div class="flex flex-col gap-xs mt-sm bg-surface rounded-lg p-sm">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface">Grilled Chicken Salad w/ Avocado</span>
+<span class="font-label-md text-label-md text-on-surface-variant">450 kcal</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface">Quinoa Side (1 cup)</span>
+<span class="font-label-md text-label-md text-on-surface-variant">230 kcal</span>
+</div>
+</div>
+<div class="flex gap-sm mt-md">
+<span class="font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed px-sm py-xs rounded">48g P</span>
+<span class="font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed px-sm py-xs rounded">55g C</span>
+<span class="font-label-sm text-label-sm bg-secondary-fixed-dim text-on-secondary-fixed-variant px-sm py-xs rounded">22g F</span>
+</div>
+</div>
+</div>
+<!-- Snacks -->
+<div class="flex flex-col md:flex-row gap-sm md:gap-md group">
+<div class="md:w-16 flex md:justify-center md:items-start pt-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors z-10 shadow-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">icecream</span>
+</div>
+</div>
+<div class="flex-1 bg-surface-container lowest rounded-xl p-md shadow-sm transition-shadow hover:shadow-md">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<h4 class="font-headline-md text-[18px] leading-6 text-on-surface">Snacks</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-xs">04:00 PM</p>
+</div>
+<span class="font-headline-md text-[18px] leading-6 text-primary">210 kcal</span>
+</div>
+<div class="flex flex-col gap-xs mt-sm bg-surface rounded-lg p-sm">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface">Greek Yogurt</span>
+<span class="font-label-md text-label-md text-on-surface-variant">120 kcal</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface">Apple</span>
+<span class="font-label-md text-label-md text-on-surface-variant">90 kcal</span>
+</div>
+</div>
+<div class="flex gap-sm mt-md">
+<span class="font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed px-sm py-xs rounded">15g P</span>
+<span class="font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed px-sm py-xs rounded">30g C</span>
+<span class="font-label-sm text-label-sm bg-secondary-fixed-dim text-on-secondary-fixed-variant px-sm py-xs rounded">2g F</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- SIDEBAR COLUMN -->
+<div class="w-full lg:w-80 flex flex-col gap-xl shrink-0 mt-lg lg:mt-0">
+<!-- Image Feature -->
+<div class="bg-cover bg-center w-full h-48 rounded-xl shadow-sm relative overflow-hidden hidden lg:block" data-alt="Overhead shot of a vibrant, healthy meal prepped bowl with fresh greens, sliced avocado, grilled salmon, and bright lemon wedges on a clean slate background, bright clinical lighting, modern aesthetic" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC5HmcEDeJNxilrUFGO296GicLOTrQ-WxqS0xrl0hiZ_7b8ULNEL-4O4bMjVil6wPXZut9CNS-VsycwSeDQrhn9xT-V_7HJgIXa1sLJipRqnj2XACG0Wl6zBmY3BZHjULxYhM2oTrgI2ppSIlmfepPOfvJbtUZeBH361K_DnU7Pn4RcRcIs5r0qAZhNorvU_HgulIZtZxk4BUYZN8H4VWc0X5uRCzfMDSCZu7Wd24AoSSS7SE9wSQNYbQ')">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-inverse/80 to-transparent flex flex-col justify-end p-md mix-blend-multiply"></div>
+<div class="absolute inset-0 flex flex-col justify-end p-md">
+<span class="font-label-sm text-label-sm text-on-primary bg-primary/80 backdrop-blur-sm px-2 py-1 rounded w-fit mb-xs">Recipe of the Day</span>
+<h3 class="font-headline-md text-[18px] leading-6 text-on-primary shadow-sm">Salmon & Greens Bowl</h3>
+</div>
+</div>
+<!-- Water Tracker -->
+<section class="bg-surface-container rounded-xl p-lg shadow-sm flex flex-col relative overflow-hidden">
+<div class="absolute -right-12 -top-12 w-32 h-32 bg-tertiary-container/30 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-md relative z-10">
+<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-xs">
+<span class="material-symbols-outlined text-tertiary">water_drop</span> Hydration
+           </h3>
+<span class="font-label-md text-label-md text-tertiary bg-tertiary-container/50 px-sm py-xs rounded-full">5 / 8</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg relative z-10">Track your daily water intake. Goal: 64oz.</p>
+<div class="grid grid-cols-4 gap-sm relative z-10">
+<!-- Filled Glasses -->
+<button class="aspect-square rounded-xl bg-tertiary-container/40 flex items-center justify-center text-tertiary hover:bg-tertiary-container/60 transition-colors shadow-sm group relative">
+<span class="material-symbols-outlined transform group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">local_drink</span>
+</button>
+<button class="aspect-square rounded-xl bg-tertiary-container/40 flex items-center justify-center text-tertiary hover:bg-tertiary-container/60 transition-colors shadow-sm group">
+<span class="material-symbols-outlined transform group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">local_drink</span>
+</button>
+<button class="aspect-square rounded-xl bg-tertiary-container/40 flex items-center justify-center text-tertiary hover:bg-tertiary-container/60 transition-colors shadow-sm group">
+<span class="material-symbols-outlined transform group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">local_drink</span>
+</button>
+<button class="aspect-square rounded-xl bg-tertiary-container/40 flex items-center justify-center text-tertiary hover:bg-tertiary-container/60 transition-colors shadow-sm group">
+<span class="material-symbols-outlined transform group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">local_drink</span>
+</button>
+<button class="aspect-square rounded-xl bg-tertiary-container/40 flex items-center justify-center text-tertiary hover:bg-tertiary-container/60 transition-colors shadow-sm group">
+<span class="material-symbols-outlined transform group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">local_drink</span>
+</button>
+<!-- Empty Glasses -->
+<button class="aspect-square rounded-xl bg-surface-container-highest flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors group border border-outline-variant/30 border-dashed">
+<span class="material-symbols-outlined opacity-30 transform group-hover:scale-110 group-hover:opacity-100 group-hover:text-tertiary transition-all">local_drink</span>
+</button>
+<button class="aspect-square rounded-xl bg-surface-container-highest flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors group border border-outline-variant/30 border-dashed">
+<span class="material-symbols-outlined opacity-30 transform group-hover:scale-110 group-hover:opacity-100 group-hover:text-tertiary transition-all">local_drink</span>
+</button>
+<button class="aspect-square rounded-xl bg-surface-container-highest flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors group border border-outline-variant/30 border-dashed">
+<span class="material-symbols-outlined opacity-30 transform group-hover:scale-110 group-hover:opacity-100 group-hover:text-tertiary transition-all">local_drink</span>
+</button>
+</div>
+<button class="mt-lg w-full py-sm rounded-lg border-2 border-tertiary text-tertiary font-label-md text-label-md hover:bg-tertiary-container/20 transition-colors flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-[20px]">add</span> Add 8oz
+        </button>
+</section>
+<!-- Mini Trend Chart -->
+<section class="bg-surface-container rounded-xl p-lg shadow-sm flex flex-col">
+<div class="flex items-center justify-between mb-md">
+<h3 class="font-headline-md text-[18px] leading-6 text-on-surface">Weekly Trend</h3>
+<span class="material-symbols-outlined text-on-surface-variant">more_horiz</span>
+</div>
+<div class="h-32 flex items-end gap-2 mt-sm">
+<!-- Simple CSS Bar Chart -->
+<div class="flex-1 bg-primary/20 rounded-t-sm h-[60%] hover:bg-primary/40 transition-colors relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface font-label-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">1800</div>
+</div>
+<div class="flex-1 bg-primary/20 rounded-t-sm h-[75%] hover:bg-primary/40 transition-colors relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface font-label-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">2100</div>
+</div>
+<div class="flex-1 bg-primary/20 rounded-t-sm h-[85%] hover:bg-primary/40 transition-colors relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface font-label-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">2250</div>
+</div>
+<div class="flex-1 bg-primary rounded-t-sm h-[65%] shadow-[0_0_8px_rgba(0,108,73,0.4)] relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface font-label-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity z-20">1650</div>
+</div>
+<div class="flex-1 bg-surface-container-highest rounded-t-sm h-[10%]"></div>
+<div class="flex-1 bg-surface-container-highest rounded-t-sm h-[10%]"></div>
+<div class="flex-1 bg-surface-container-highest rounded-t-sm h-[10%]"></div>
+</div>
+<div class="flex justify-between mt-sm font-label-sm text-label-sm text-on-surface-variant">
+<span>M</span><span>T</span><span>W</span><span class="text-primary font-bold">T</span><span>F</span><span>S</span><span>S</span>
+</div>
+</section>
+</div>
+</div>
+</div></main></div></body></html>

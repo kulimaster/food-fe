@@ -1,4 +1,4 @@
-# Food – struktura repozitáře
+# NutriPlan – struktura repozitáře
 
 Uspořádání repozitáře `food-fe` tak, aby se v něm snadno orientoval člověk i Claude Code.
 
@@ -33,8 +33,12 @@ food-fe/
 │   ├── repo-structure.md      ← tento soubor
 │   ├── progress.md            ← aktuální stav, číst jako první
 │   └── decisions/             ← ADR: důležitá rozhodnutí (NNNN-nazev.md)
-├── prototype/
-│   └── food-prototype.html    ← HTML prototyp jako předloha UI
+├── prototype/                 ← export z Google Stitch, předloha UI
+│   ├── DESIGN.md              ← design systém Vitality Core (tokeny, pravidla)
+│   ├── logo.png
+│   └── <obrazovka>/           ← daily-dashboard, ingredients-database, recipe-builder, …
+│       ├── mobile/            ← code.html + screen.png
+│       └── desktop/
 ├── public/
 ├── e2e/                       ← Playwright testy
 ├── src/

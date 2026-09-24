@@ -1,0 +1,235 @@
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-tertiary-fixed-variant":"#004395","inverse-on-surface":"#eaf1ff","surface-bright":"#f8f9ff","on-primary-fixed":"#002113","background":"#f8f9ff","surface-container-highest":"#d3e4fe","on-secondary":"#ffffff","surface-tint":"#006c49","on-secondary-fixed-variant":"#783200","on-tertiary-container":"#00367a","surface-container-lowest":"#ffffff","primary-fixed":"#6ffbbe","on-tertiary-fixed":"#001a42","surface":"#f8f9ff","on-background":"#0b1c30","surface-container-low":"#eff4ff","error-container":"#ffdad6","secondary-container":"#fd761a","on-primary-container":"#00422b","secondary":"#9d4300","inverse-primary":"#4edea3","on-primary":"#ffffff","on-tertiary":"#ffffff","tertiary-fixed-dim":"#adc6ff","on-secondary-fixed":"#341100","tertiary-fixed":"#d8e2ff","surface-container":"#e5eeff","inverse-surface":"#213145","surface-variant":"#d3e4fe","secondary-fixed-dim":"#ffb690","primary-fixed-dim":"#4edea3","outline":"#6c7a71","on-error-container":"#93000a","outline-variant":"#bbcabf","on-error":"#ffffff","on-secondary-container":"#5c2400","secondary-fixed":"#ffdbca","primary":"#006c49","on-surface-variant":"#3c4a42","tertiary":"#005ac2","surface-container-high":"#dce9ff","primary-container":"#10b981","surface-dim":"#cbdbf5","error":"#ba1a1a","on-surface":"#0b1c30","on-primary-fixed-variant":"#005236","tertiary-container":"#71a1ff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"base":"4px","md":"16px","container-padding":"20px","xs":"4px","gutter":"16px","xl":"32px","sm":"8px","lg":"24px"},"fontFamily":{"headline-md":["Inter"],"display-lg":["Inter"],"body-lg":["Inter"],"body-md":["Inter"],"headline-lg":["Inter"],"headline-lg-mobile":["Inter"],"label-md":["Inter"],"label-sm":["Inter"]},"fontSize":{"headline-md":["24px",{"lineHeight":"32px","fontWeight":"600"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-lg-mobile":["28px",{"lineHeight":"36px","fontWeight":"700"}],"label-md":["14px",{"lineHeight":"20px","letterSpacing":"0.05em","fontWeight":"600"}],"label-sm":["12px",{"lineHeight":"16px","fontWeight":"500"}]}}}}</script><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/></head><body class="bg-background font-body-md text-on-background"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col pt-lg"><div class="px-lg mb-xl flex items-center gap-sm"><img alt="NutriPlan Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBucpIosHXWdJ2knvldeVJeZhjOQ9ga0RdR6jlL0B4YentqCiyxPIoW5CCMyYx-y4itLAs_RfOkZ6n6HLw_ZWeWvvHKN0YM-9VwIUA5ZryWF0kVTOO7Lempu0yqnscCWb3mURKbT-GcYz_gmN5QFu-tXkTMz64dWE_YFY7gKMNeDEc0mQGVoeLLALF0T80uE43QNOChVyKAIqFqWkH7EDP4QddjGdfyatfkcvjlfXpYgy99nwKWlLQUig"/><span class="font-headline-md text-headline-md text-primary">NutriPlan</span></div><nav class="flex-1 px-md flex flex-col gap-sm" data-active-classes="bg-primary-container text-on-primary-container font-headline-md rounded-xl"><a class="flex items-center px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="dashboard" href="#"><span class="material-symbols-outlined mr-md">dashboard</span><span class="font-label-md text-label-md">Dashboard</span></a><a class="flex items-center px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="planner" href="#"><span class="material-symbols-outlined mr-md">calendar_today</span><span class="font-label-md text-label-md">Planner</span></a><a aria-current="page" class="flex items-center px-md py-sm transition-all group bg-primary-container text-on-primary-container font-headline-md rounded-xl" data-path="ingredients" href="#"><span class="material-symbols-outlined mr-md">kitchen</span><span class="font-label-md text-label-md">Ingredients</span></a><a class="flex items-center px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="profile" href="#"><span class="material-symbols-outlined mr-md">person</span><span class="font-label-md text-label-md">Profile</span></a></nav></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-end px-xl gap-lg"><button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined">search</span></button><button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined">notifications</span></button><div class="flex items-center gap-sm cursor-pointer"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQN5OCtcdAvJCJLmvPG1uGBuL6VXodsPOFIANRbGcobssqQIin1DPQxToT4pRg6VpT3PinARZKB0ap7WAtjApQtFqAWsD8oa9AecbIGoCBxlVmXcR5KfrwBTjewKVoAroM-0wSd_SSwy5vUu6UB1XTu41NtSn7Rkp_oBJWl9PTFKs7gcHOh5Rfqj3J2rG7uwhIrNHeR1j6az8QbeaNu_T1wJIr92NXapqPU7JsmtwnWVimdGbOOuMVMg"/></div></header><main class="relative pt-16 min-h-screen bg-background"><div class="flex flex-col w-full bg-background min-h-[calc(100vh-64px)] p-lg gap-xl">
+<div class="flex items-center justify-between">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-background mb-xs">Create New Recipe</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Build your meal and track its nutritional value.</p>
+</div>
+<div class="flex gap-md">
+<button class="px-md py-sm rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md hover:bg-surface-variant transition-colors flex items-center gap-sm">
+<span class="material-symbols-outlined">close</span> Cancel
+            </button>
+<button class="px-md py-sm rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-on-primary-fixed-variant transition-colors flex items-center gap-sm shadow-md">
+<span class="material-symbols-outlined">favorite</span> Save to Favorites
+            </button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<div class="lg:col-span-8 flex flex-col gap-lg">
+<section class="bg-surface rounded-xl shadow-sm p-lg flex flex-col gap-md">
+<h2 class="font-headline-md text-headline-md text-on-surface">Recipe Details</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div class="flex flex-col gap-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="recipe-name">Recipe Name</label>
+<input class="bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg px-md py-sm focus:outline-none focus:ring-2 focus:ring-primary w-full" id="recipe-name" placeholder="e.g. Avocado Toast with Egg" type="text"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="recipe-portions">Number of Portions</label>
+<div class="flex items-center gap-sm bg-surface-container-low rounded-lg p-xs">
+<button class="p-xs rounded-md hover:bg-surface-container-high text-on-surface-variant transition-colors flex items-center justify-center" id="btn-minus">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<input class="bg-transparent text-center text-on-surface font-body-md text-body-md w-full focus:outline-none appearance-none" id="recipe-portions" min="1" type="number" value="2"/>
+<button class="p-xs rounded-md hover:bg-surface-container-high text-on-surface-variant transition-colors flex items-center justify-center" id="btn-plus">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-xs mt-sm">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Cover Image (Optional)</label>
+<div class="h-32 rounded-xl bg-surface-container-low flex flex-col items-center justify-center gap-sm border-2 border-dashed border-outline-variant cursor-pointer hover:bg-surface-container transition-colors group relative overflow-hidden">
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors text-3xl z-10">add_a_photo</span>
+<span class="font-label-md text-label-md text-outline-variant group-hover:text-primary transition-colors z-10">Upload Image</span>
+<div class="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-20 transition-opacity" data-alt="A stylized overhead shot of a healthy meal prep container on a clean white marble counter, vibrant greens and proteins, soft natural lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDpAcGo8zXiQ15HTufTKGKQ5NILRg6wpEfQAaIGg-Imj8VlYBDsaS7TS8A_pTLH5y3_leXVXnd_CaiJlUBuxGi757lYY0C6REmTSr7Pvc4vSwUoe0ODeeGo15K2BNquygPqM_lLsl_v0wsUf6nTXLbiVUXZgTvKMeQC5BQu7Rj_KMD2b0imTqzvYeDfhsuZPjF6H5hT23BzdWZDIT1KcJurTRKttXx3rfWPgs0JpILdE4gyLOq1Jr5S2A')"></div>
+</div>
+</div>
+</section>
+<section class="bg-surface rounded-xl shadow-sm p-lg flex flex-col gap-md flex-1">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md text-on-surface">Ingredients</h2>
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="bg-surface-container-low text-on-surface font-body-md text-body-md rounded-full pl-xl pr-md py-sm w-full focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Search ingredients..." type="text"/>
+</div>
+</div>
+<div class="flex-1 bg-surface-container-lowest rounded-lg overflow-hidden flex flex-col">
+<div class="grid grid-cols-12 gap-sm px-md py-sm bg-surface-container-low font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">
+<div class="col-span-5">Ingredient</div>
+<div class="col-span-3 text-right">Amount</div>
+<div class="col-span-3 text-right">Calories</div>
+<div class="col-span-1 text-center">Act</div>
+</div>
+<div class="flex flex-col gap-0" id="ingredient-list">
+<div class="grid grid-cols-12 gap-sm px-md py-md items-center hover:bg-surface-container-lowest border-b border-surface-container-low transition-colors group">
+<div class="col-span-5 flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-headline-md">
+<span class="material-symbols-outlined">egg</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface truncate">Free Range Eggs</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Protein source</span>
+</div>
+</div>
+<div class="col-span-3 flex items-center justify-end gap-xs">
+<input class="w-16 bg-surface-container text-right text-on-surface font-body-md text-body-md rounded-md px-sm py-xs focus:outline-none focus:ring-1 focus:ring-primary" type="number" value="2"/>
+<span class="font-body-md text-body-md text-on-surface-variant w-8">pcs</span>
+</div>
+<div class="col-span-3 text-right font-headline-md text-headline-md text-on-surface">144 kcal</div>
+<div class="col-span-1 flex justify-center">
+<button class="text-on-surface-variant hover:text-error transition-colors opacity-0 group-hover:opacity-100 p-xs rounded-full hover:bg-error-container">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-sm px-md py-md items-center hover:bg-surface-container-lowest border-b border-surface-container-low transition-colors group">
+<div class="col-span-5 flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-headline-md">
+<span class="material-symbols-outlined">grass</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface truncate">Hass Avocado</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Healthy Fats</span>
+</div>
+</div>
+<div class="col-span-3 flex items-center justify-end gap-xs">
+<input class="w-16 bg-surface-container text-right text-on-surface font-body-md text-body-md rounded-md px-sm py-xs focus:outline-none focus:ring-1 focus:ring-primary" type="number" value="100"/>
+<span class="font-body-md text-body-md text-on-surface-variant w-8">g</span>
+</div>
+<div class="col-span-3 text-right font-headline-md text-headline-md text-on-surface">160 kcal</div>
+<div class="col-span-1 flex justify-center">
+<button class="text-on-surface-variant hover:text-error transition-colors opacity-0 group-hover:opacity-100 p-xs rounded-full hover:bg-error-container">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-sm px-md py-md items-center hover:bg-surface-container-lowest transition-colors group">
+<div class="col-span-5 flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center font-headline-md">
+<span class="material-symbols-outlined">bakery_dining</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface truncate">Sourdough Bread</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Carbs</span>
+</div>
+</div>
+<div class="col-span-3 flex items-center justify-end gap-xs">
+<input class="w-16 bg-surface-container text-right text-on-surface font-body-md text-body-md rounded-md px-sm py-xs focus:outline-none focus:ring-1 focus:ring-primary" type="number" value="80"/>
+<span class="font-body-md text-body-md text-on-surface-variant w-8">g</span>
+</div>
+<div class="col-span-3 text-right font-headline-md text-headline-md text-on-surface">230 kcal</div>
+<div class="col-span-1 flex justify-center">
+<button class="text-on-surface-variant hover:text-error transition-colors opacity-0 group-hover:opacity-100 p-xs rounded-full hover:bg-error-container">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+</div>
+<button class="w-full py-md mt-auto bg-surface-container-low hover:bg-surface-container text-primary font-label-md text-label-md flex items-center justify-center gap-sm transition-colors border-t border-surface-container">
+<span class="material-symbols-outlined">add_circle</span> Add Custom Ingredient
+                    </button>
+</div>
+</section>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-lg h-full">
+<section class="bg-primary text-on-primary rounded-xl shadow-md p-lg flex flex-col gap-md sticky top-24">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md">Macro Summary</h2>
+<span class="bg-on-primary text-primary font-label-sm text-label-sm px-sm py-xs rounded-full">Per Portion</span>
+</div>
+<div class="flex flex-col items-center justify-center py-xl relative">
+<svg class="w-48 h-48 transform -rotate-90" viewbox="0 0 100 100">
+<circle class="opacity-20" cx="50" cy="50" fill="none" r="40" stroke="currentColor" stroke-width="8"></circle>
+<circle class="transition-all duration-1000 ease-out" cx="50" cy="50" fill="none" r="40" stroke="#6ffbbe" stroke-dasharray="251.2" stroke-dashoffset="60" stroke-width="8"></circle>
+<circle class="transition-all duration-1000 ease-out" cx="50" cy="50" fill="none" r="40" stroke="#adc6ff" stroke-dasharray="251.2" stroke-dashoffset="0" stroke-width="8" style="stroke-dashoffset: 190;"></circle>
+<circle class="transition-all duration-1000 ease-out" cx="50" cy="50" fill="none" r="40" stroke="#ffb690" stroke-dasharray="251.2" stroke-dashoffset="220" stroke-width="8" style="stroke-dashoffset: 230; stroke-dasharray: 251.2 251.2;"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-display-lg text-display-lg leading-none" id="total-cals">267</span>
+<span class="font-label-sm text-label-sm opacity-80 mt-1">kcal / port</span>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-sm mt-md">
+<div class="bg-on-primary/10 rounded-lg p-sm flex flex-col items-center">
+<div class="flex items-center gap-xs mb-xs">
+<div class="w-2 h-2 rounded-full bg-primary-fixed"></div>
+<span class="font-label-sm text-label-sm opacity-80">Carbs</span>
+</div>
+<span class="font-headline-md text-headline-md">19g</span>
+<span class="text-xs opacity-60">34%</span>
+</div>
+<div class="bg-on-primary/10 rounded-lg p-sm flex flex-col items-center">
+<div class="flex items-center gap-xs mb-xs">
+<div class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></div>
+<span class="font-label-sm text-label-sm opacity-80">Protein</span>
+</div>
+<span class="font-headline-md text-headline-md">12g</span>
+<span class="text-xs opacity-60">22%</span>
+</div>
+<div class="bg-on-primary/10 rounded-lg p-sm flex flex-col items-center">
+<div class="flex items-center gap-xs mb-xs">
+<div class="w-2 h-2 rounded-full bg-secondary-fixed-dim"></div>
+<span class="font-label-sm text-label-sm opacity-80">Fat</span>
+</div>
+<span class="font-headline-md text-headline-md">11g</span>
+<span class="text-xs opacity-60">44%</span>
+</div>
+</div>
+<div class="mt-md pt-md border-t border-on-primary/20 flex justify-between items-center text-sm opacity-80 font-body-md text-body-md">
+<span>Total Recipe Calories:</span>
+<span class="font-headline-md text-headline-md">534 kcal</span>
+</div>
+</section>
+</div>
+</div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const inputPortions = document.getElementById('recipe-portions');
+        const btnMinus = document.getElementById('btn-minus');
+        const btnPlus = document.getElementById('btn-plus');
+        const totalCalsDisplay = document.getElementById('total-cals');
+        
+        let currentTotal = 534;
+
+        function updateTotals() {
+            let portions = parseInt(inputPortions.value);
+            if (isNaN(portions) || portions < 1) {
+                portions = 1;
+                inputPortions.value = 1;
+            }
+            const perPortion = Math.round(currentTotal / portions);
+            
+            // Simple animate counter
+            let start = parseInt(totalCalsDisplay.innerText);
+            let end = perPortion;
+            let dur = 300;
+            let startTime = null;
+
+            function anim(currentTime) {
+                if (!startTime) startTime = currentTime;
+                let progress = Math.min((currentTime - startTime) / dur, 1);
+                totalCalsDisplay.innerText = Math.round(start + (end - start) * progress);
+                if (progress < 1) {
+                    requestAnimationFrame(anim);
+                }
+            }
+            requestAnimationFrame(anim);
+        }
+
+        btnMinus.addEventListener('click', () => {
+            if (inputPortions.value > 1) {
+                inputPortions.value = parseInt(inputPortions.value) - 1;
+                updateTotals();
+            }
+        });
+
+        btnPlus.addEventListener('click', () => {
+            inputPortions.value = parseInt(inputPortions.value) + 1;
+            updateTotals();
+        });
+
+        inputPortions.addEventListener('change', updateTotals);
+    });
+</script></main></div></body></html>
