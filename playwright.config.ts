@@ -19,8 +19,11 @@ export default defineConfig({
     { name: 'mobile', use: { ...devices['Pixel 7'] } },
   ],
   // E2E runs against the production build, not the dev server.
+  // Binaries are called directly (not via `pnpm build`/`pnpm preview`): Playwright stops the server
+  // by killing the spawned process tree, and an extra pnpm layer can leave `vite preview` running,
+  // which keeps the run hanging after the tests finish (seen on Linux CI).
   webServer: {
-    command: `pnpm build && pnpm preview --port ${String(port)} --strictPort`,
+    command: `tsc -b && vite build && vite preview --port ${String(port)} --strictPort`,
     url: `http://localhost:${String(port)}`,
     reuseExistingServer: !isCI,
     env: { VITE_API_URL: process.env.VITE_API_URL ?? 'http://localhost:5201' },
