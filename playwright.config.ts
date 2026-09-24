@@ -23,5 +23,6 @@ export default defineConfig({
     command: `pnpm build && pnpm preview --port ${String(port)} --strictPort`,
     url: `http://localhost:${String(port)}`,
     reuseExistingServer: !isCI,
+    env: { VITE_API_URL: process.env.VITE_API_URL ?? 'http://localhost:5201' },
   },
 })

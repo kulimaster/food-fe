@@ -1,5 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import '@/env' // validate environment variables before anything renders
 import { App } from '@/app/App'
 import '@/styles/index.css'
 

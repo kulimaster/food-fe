@@ -17,6 +17,7 @@ export default defineConfig({
     setupFiles: ['./src/test/setup.ts'],
     include: ['src/**/*.test.{ts,tsx}'],
     clearMocks: true,
+    env: { VITE_API_URL: 'http://localhost:5201' },
     coverage: {
       provider: 'v8',
       include: ['src/**/*.{ts,tsx}'],
