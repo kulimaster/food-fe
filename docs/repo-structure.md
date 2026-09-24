@@ -59,18 +59,23 @@ food-fe/
 │   ├── styles/                ← Tailwind tokeny (barvy, fonty)
 │   ├── test/                  ← setup pro Vitest, test utils
 │   ├── env.ts                 ← typově ověřené proměnné prostředí (Zod)
+│   ├── vite-env.d.ts          ← typy import.meta.env
 │   ├── routes.tsx
 │   └── main.tsx
 ├── .editorconfig
-├── .env.example               ← vzor proměnných prostředí (VITE_API_URL…), .env se necommituje
+├── .env.example               ← vzor proměnných prostředí; lokálně .env.local (necommituje se)
+├── .gitattributes             ← konce řádků LF
 ├── .gitignore
 ├── .nvmrc                     ← verze Node
+├── .prettierignore
 ├── eslint.config.js
+├── lefthook.yml               ← git hooky (pre-commit, pre-push)
 ├── prettier.config.js
 ├── package.json               ← včetně "engines" a "packageManager"
 ├── pnpm-lock.yaml
+├── pnpm-workspace.yaml        ← nastavení pnpm (povolené instalační skripty, peer výjimky)
 ├── playwright.config.ts
-├── tsconfig.json              ← strict
+├── tsconfig.json              ← odkazuje na tsconfig.app.json (src) a tsconfig.node.json (konfigy, e2e)
 └── vite.config.ts             ← včetně konfigurace Vitestu
 ```
 

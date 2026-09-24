@@ -3,32 +3,50 @@
 Přehled stavu projektu, aby šlo navázat bez znovuodvozování kontextu. **Aktualizovat na konci každé
 pracovní session**: je to první věc, kterou číst, a poslední, kterou upravit.
 
-Poslední aktualizace: 2026-09-24
+Poslední aktualizace: 2026-09-25
 
 ## Co existuje
 
-- Dokumentace: `docs/frontend-plan.md`, `docs/repo-structure.md`, tento soubor,
-  ADR `0001-separate-repositories.md` a `0002-design-system-vitality-core.md`
-- `prototype/`: Stitch export – `DESIGN.md` (Vitality Core), logo, 5 obrazovek (mobile + desktop)
-- `CLAUDE.md`, `README.md`, `.gitignore`, `.editorconfig`
-- `.claude/settings.json`: přístup k `../food-be` přes `additionalDirectories`, oprávnění podle vzoru
-  z `food-be` (`git commit` a `git push` vždy vyžadují potvrzení)
-- Zatím žádný kód, projekt není založený
+**Fáze 1 (založení projektu) je hotová.**
 
-## Rozhodnuto v této session
+- **Projekt:** Vite 8, React 19, TypeScript 6 (strict + `noUncheckedIndexedAccess`), alias `@/`,
+  pnpm 12 (`packageManager`), Node 24 (`.nvmrc`). Aplikace je zatím jen zástupná stránka
+  (`src/app/App.tsx`).
+- **Styly:** Tailwind v4, tokeny Vitality Core v `src/styles/theme.css`. Výchozí barvy, fonty,
+  zaoblení a stíny Tailwindu jsou vypnuté. Inter lokálně přes `@fontsource-variable/inter`.
+  `prototype/` je vyloučený ze skenování tříd.
+- **Kvalita:** ESLint 10 (typescript-eslint strict type-checked, react-hooks, jsx-a11y, zákaz
+  importů mezi features přes `@/features/*`), Prettier s řazením Tailwind tříd.
+- **Testy:** Vitest + Testing Library (jsdom) v `vite.config.ts`; Playwright E2E proti produkčnímu
+  buildu, projekty desktop a mobile (Pixel 7), testy v `e2e/`.
+- **Git hooky (lefthook):** pre-commit ESLint + Prettier na staged soubory, pre-push typecheck +
+  unit testy. Instalace přes skript `prepare`.
+- **Env:** `src/env.ts` validuje `VITE_API_URL` přes Zod při startu; vzor v `.env.example`, lokálně
+  `.env.local` (ignorovaný).
+- **CI:** GitHub Actions (`quality` + `e2e`), Dependabot (npm týdně, actions měsíčně), šablona PR.
+- **Claude:** `.claude/settings.json` (přístup k `../food-be`), `.claude/launch.json` (dev server).
+- **Dokumentace:** plán, struktura repa, ADR 0001 (oddělená repa) a 0002 (Vitality Core, NutriPlan).
 
-- Dvě samostatná repa (`food-fe`, `food-be`) místo monorepa; kontrakt přes OpenAPI
-- Doménová dokumentace zůstává v `food-be/docs/`, frontend na ni odkazuje
-- Stack doplněn o pnpm, ESLint + Prettier, Vitest + Testing Library, Playwright, lefthook,
-  GitHub Actions, Dependabot
-- Testy a CI se nastavují už ve fázi 1
-- Design systém Vitality Core ze Stitche místo motivu „Nutrition Facts label"; název aplikace
-  NutriPlan (ADR 0002)
+## Rozhodnutí a poznámky z fáze 1
+
+- **ESLint 10:** `eslint-plugin-jsx-a11y` 6.10.2 oficiálně podporuje jen ESLint ≤ 9, ale používá jen
+  API, které ESLint 10 zachoval; povoleno v `pnpm-workspace.yaml` (`peerDependencyRules`). Odebrat,
+  až plugin vydá podporu.
+- **pnpm blokuje instalační skripty závislostí.** Každý nový balíček se skriptem je potřeba výslovně
+  povolit/zakázat v `pnpm-workspace.yaml` (`allowBuilds`), jinak `pnpm install` selže (i v CI).
+- **lefthook bez lint-staged:** lefthook umí pracovat se staged soubory sám.
+- **Tokeny:** zdrojem pravdy je `prototype/DESIGN.md`, ne `code.html` (ten se liší v zaoblení
+  a barvách tuků/vlákniny). Barvy tuků (`#f59e0b`) a vlákniny (`#7c3aed`) v `DESIGN.md` chybí –
+  navrženy a schváleny.
+- **Hranice features:** ESLint hlídá jen importy přes `@/features/*`, relativní import do jiné
+  feature neodhalí (případně později `eslint-plugin-boundaries`).
 
 ## Další krok
 
-**Fáze 1 – založení projektu:** Vite + React + TS (strict) + Tailwind v4, ESLint, Prettier, Vitest,
-Playwright, lefthook + lint-staged, `.env.example` + `src/env.ts`, `.nvmrc`, CI workflow, Dependabot.
+**Fáze 2 – design systém:** Storybook (+ addon a11y), logo jako favicon, základní komponenty podle
+prototypu (kalorický prstenec, progress bary a prstence maker, makro čipy, tlačítka, karty, položka
+logu, formulářové prvky), každá se story a testem. Předem rozhodnout ikony (Material Symbols vs.
+Lucide).
 
 ## Otevřené body
 

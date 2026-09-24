@@ -35,16 +35,17 @@ Souhrn dohodnutých technologií a postupu pro React frontend aplikace NutriPlan
 | Lint a formátování        | ESLint (flat config, `jsx-a11y`) + Prettier (`prettier-plugin-tailwindcss`) | Jednotný styl, odhalení chyb                             |
 | Unit a komponentové testy | Vitest + Testing Library                                                    | Logika, hooky, komponenty                                |
 | E2E testy                 | Playwright                                                                  | Klíčové uživatelské scénáře v prohlížeči                 |
-| Git hooky                 | lefthook + lint-staged                                                      | Lint a formát před commitem                              |
+| Git hooky                 | lefthook                                                                    | Lint a formát před commitem, testy před pushem           |
+| Proměnné prostředí        | Zod (`src/env.ts`)                                                          | Validace `VITE_*` proměnných při startu                  |
 | CI                        | GitHub Actions                                                              | Typecheck, lint, testy, build na každý PR                |
 | Závislosti                | Dependabot                                                                  | Pravidelné aktualizace                                   |
 
 ## Postup
 
-1. **Založení projektu:** Vite + React + TS (strict) + Tailwind, ESLint, Prettier, Vitest,
-   Playwright, git hooky, `.env.example` s typovou validací, CI workflow, Dependabot. Testy
-   a kvalita od začátku, ne až na konci.
-2. **Design systém:** tokeny z `DESIGN.md` v Tailwindu a základní komponenty (kalorický prstenec,
+1. ✅ **Založení projektu:** Vite + React + TS (strict) + Tailwind s tokeny, ESLint, Prettier,
+   Vitest, Playwright, git hooky, `.env.example` s typovou validací, CI workflow, Dependabot.
+   Testy a kvalita od začátku, ne až na konci.
+2. **Design systém:** Storybook, logo jako favicon a základní komponenty (kalorický prstenec,
    progress bary a prstence maker, makro čipy, tlačítka, karty, položka logu, formulářové prvky),
    vše rovnou ve Storybooku a s testy
 3. **Kostra aplikace:** providery, routing, layout (spodní navigace na mobilu, postranní panel na

@@ -35,8 +35,21 @@ Podrobnosti a další pravidla viz `../food-be/docs/business-description.md`.
 
 ## Příkazy
 
-Projekt ještě není založený (fáze 1). Doplnit, jakmile budou existovat: dev server, Storybook,
-testy, E2E, lint, typecheck, generování API klienta.
+```bash
+pnpm dev             # dev server na http://localhost:5173 (potřebuje .env.local, viz .env.example)
+pnpm build           # typecheck + produkční build
+pnpm typecheck       # jen typová kontrola
+pnpm lint            # ESLint, selže i na varování (lint:fix opraví, co jde)
+pnpm format          # Prettier (format:check jen kontroluje)
+pnpm test            # Vitest ve watch módu (test:run jednorázově, test:coverage s pokrytím)
+pnpm test:e2e        # Playwright proti produkčnímu buildu, desktop + mobile
+```
+
+Před dokončením změny musí projít `typecheck`, `lint`, `format:check` a `test:run` (totéž hlídá CI).
+Git hooky (lefthook) to částečně dělají samy: pre-commit lint + formát, pre-push typecheck + testy.
+Hooky neobcházet (`--no-verify`).
+
+Doplnit, až budou existovat: Storybook (fáze 2), generování API klienta (fáze 4).
 
 ## Konvence
 
@@ -51,7 +64,9 @@ testy, E2E, lint, typecheck, generování API klienta.
 
 ## Co nedělat
 
-- Nepřidávat nové knihovny bez domluvy
+- Nepřidávat nové knihovny bez domluvy (a u balíčku s instalačním skriptem rozhodnout
+  `allowBuilds` v `pnpm-workspace.yaml`, jinak `pnpm install` selže)
+- Nečíst `import.meta.env` přímo; používat validované `env` z `@/env`
 - Nepoužívat výchozí barvy Tailwindu mimo tokeny, nepoužívat barvu makra pro jiný účel
 - Nekopírovat `code.html` z prototypu do `src/` jako celek; rozložit ho na komponenty
 - Neupravovat vygenerovaný kód v `src/api/` ručně
