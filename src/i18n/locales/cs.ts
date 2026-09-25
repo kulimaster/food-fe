@@ -21,6 +21,13 @@ export const cs = {
     fat: 'Tuky',
     fiber: 'Vláknina',
   },
+  calories: {
+    remaining: 'zbývá {{value}}',
+    over: '{{value}} navíc',
+  },
+  progress: {
+    ofGoal: '{{value}} z {{goal}}',
+  },
   macrosShort: {
     protein: 'B',
     carbs: 'S',

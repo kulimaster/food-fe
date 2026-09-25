@@ -21,6 +21,13 @@ export const en = {
     fat: 'Fat',
     fiber: 'Fiber',
   },
+  calories: {
+    remaining: '{{value}} remaining',
+    over: '{{value}} over',
+  },
+  progress: {
+    ofGoal: '{{value}} of {{goal}}',
+  },
   macrosShort: {
     protein: 'P',
     carbs: 'C',

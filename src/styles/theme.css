@@ -77,6 +77,16 @@
   --color-macro-fat: #f59e0b; /* amber – not defined in DESIGN.md, proposed */
   --color-macro-fiber: #7c3aed; /* violet – not defined in DESIGN.md, proposed */
 
+  /*
+   * Macro colors for TEXT (≥ 4.5:1 on light surfaces and 10 % tints). Orange and amber are too
+   * light for text, so they get darker variants; bars and rings keep the base colors above.
+   */
+  --color-macro-calories-strong: var(--color-primary);
+  --color-macro-protein-strong: var(--color-tertiary);
+  --color-macro-carbs-strong: var(--color-secondary); /* #9d4300 */
+  --color-macro-fat-strong: #8a5a00; /* dark amber – proposed */
+  --color-macro-fiber-strong: var(--color-macro-fiber);
+
   /* ---------- Typography ---------- */
   --font-*: initial;
   --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
