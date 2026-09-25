@@ -18,6 +18,8 @@ export default defineConfig({
     include: ['src/**/*.test.{ts,tsx}'],
     clearMocks: true,
     env: { VITE_API_URL: 'http://localhost:5201' },
+    // CSS is stubbed out in tests by default; theme.css is read as text by src/styles/tokens.ts
+    css: { include: [/theme\.css/] },
     coverage: {
       provider: 'v8',
       include: ['src/**/*.{ts,tsx}'],

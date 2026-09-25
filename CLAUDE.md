@@ -71,6 +71,8 @@ Doplnit, až budou existovat: Storybook (fáze 2), generování API klienta (fá
   `allowBuilds` v `pnpm-workspace.yaml`, jinak `pnpm install` selže)
 - Nečíst `import.meta.env` přímo; používat validované `env` z `@/env`
 - Nepoužívat výchozí barvy Tailwindu mimo tokeny, nepoužívat barvu makra pro jiný účel
+- Nepoužívat `outline` / `outline-variant` na text – jsou pro okraje a nesplňují kontrast (4,3 : 1);
+  pro vedlejší text `on-surface-variant`
 - Nekopírovat `code.html` z prototypu do `src/` jako celek; rozložit ho na komponenty
 - Neupravovat vygenerovaný kód v `src/api/` ručně
 - Nekopírovat backendovou dokumentaci do tohoto repa, odkazovat na ni

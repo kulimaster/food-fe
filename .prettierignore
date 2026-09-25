@@ -3,3 +3,4 @@ coverage
 pnpm-lock.yaml
 prototype
 src/api/generated
+storybook-static

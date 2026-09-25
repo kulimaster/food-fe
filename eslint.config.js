@@ -3,12 +3,13 @@ import prettier from 'eslint-config-prettier'
 import jsxA11y from 'eslint-plugin-jsx-a11y'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
+import storybook from 'eslint-plugin-storybook'
 import { defineConfig, globalIgnores } from 'eslint/config'
 import globals from 'globals'
 import tseslint from 'typescript-eslint'
 
 export default defineConfig([
-  globalIgnores(['dist', 'coverage', 'prototype', 'src/api/generated']),
+  globalIgnores(['dist', 'coverage', 'storybook-static', 'prototype', 'src/api/generated']),
   {
     files: ['**/*.{ts,tsx}'],
     extends: [
@@ -50,6 +51,7 @@ export default defineConfig([
       ],
     },
   },
+  storybook.configs['flat/recommended'],
   {
     files: ['*.config.{js,ts}'],
     extends: [tseslint.configs.disableTypeChecked],
