@@ -28,6 +28,7 @@ food-fe/
 │   ├── workflows/ci.yml       ← typecheck, lint, testy, build, build Storybooku
 │   ├── dependabot.yml         ← aktualizace závislostí
 │   └── pull_request_template.md
+├── .storybook/               ← konfigurace Storybooku (main.ts, preview.ts s přepínačem jazyka)
 ├── docs/
 │   ├── frontend-plan.md       ← stack a fáze
 │   ├── repo-structure.md      ← tento soubor
@@ -44,7 +45,8 @@ food-fe/
 ├── src/
 │   ├── app/                   ← providery (QueryClient, Router), layout, error boundary, 404
 │   ├── api/                   ← vygenerovaný API klient a typy (needitovat ručně)
-│   ├── components/            ← design systém: znovupoužitelné komponenty + .stories.tsx
+│   ├── components/            ← design systém; každá komponenta ve vlastní složce:
+│   │   └── Button/            ←   Button.tsx, Button.stories.tsx, Button.test.tsx, index.ts
 │   ├── features/              ← obrazovky podle domény
 │   │   ├── dashboard/
 │   │   ├── meals/
@@ -54,10 +56,11 @@ food-fe/
 │   │   ├── shopping-list/
 │   │   ├── activity/
 │   │   └── profile/
-│   ├── lib/                   ← utility, formátování, doménové výpočty (BMR apod.)
+│   ├── i18n/                  ← react-i18next, locales/{en,cs}.ts, formátování (Intl)
+│   ├── lib/                   ← utility (cx), doménové výpočty (BMR apod.)
 │   ├── mocks/                 ← MSW handlery
-│   ├── styles/                ← Tailwind tokeny (barvy, fonty)
-│   ├── test/                  ← setup pro Vitest, test utils
+│   ├── styles/                ← Tailwind tokeny (theme.css), stránka tokenů pro Storybook
+│   ├── test/                  ← setup pro Vitest (vč. Storybook anotací), test utils
 │   ├── env.ts                 ← typově ověřené proměnné prostředí (Zod)
 │   ├── vite-env.d.ts          ← typy import.meta.env
 │   ├── routes.tsx

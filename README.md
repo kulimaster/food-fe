@@ -7,7 +7,8 @@ recepty, log aktivit, týdenní plánovač a nákupní seznam).
 
 Backend (.NET 10, REST API) je v samostatném repozitáři [`food-be`](https://github.com/kulimaster/food-be).
 
-**Stack:** Vite, React 19, TypeScript, Tailwind v4, Vitest, Playwright. Podrobnosti v
+**Stack:** Vite, React 19, TypeScript, Tailwind v4, react-i18next (cs/en), Storybook, Vitest,
+Playwright. Podrobnosti v
 [docs/frontend-plan.md](docs/frontend-plan.md).
 
 ## Požadavky
@@ -44,15 +45,16 @@ pnpm exec playwright install chromium
 
 ## Příkazy
 
-| Příkaz                                     | Co dělá                                 |
-| ------------------------------------------ | --------------------------------------- |
-| `pnpm dev`                                 | Dev server                              |
-| `pnpm build` / `pnpm preview`              | Produkční build / jeho lokální náhled   |
-| `pnpm typecheck`                           | Typová kontrola                         |
-| `pnpm lint` / `pnpm lint:fix`              | ESLint                                  |
-| `pnpm format` / `pnpm format:check`        | Prettier                                |
-| `pnpm test` / `test:run` / `test:coverage` | Unit a komponentové testy (Vitest)      |
-| `pnpm test:e2e`                            | E2E testy (Playwright), desktop i mobil |
+| Příkaz                                     | Co dělá                                   |
+| ------------------------------------------ | ----------------------------------------- |
+| `pnpm dev`                                 | Dev server                                |
+| `pnpm build` / `pnpm preview`              | Produkční build / jeho lokální náhled     |
+| `pnpm typecheck`                           | Typová kontrola                           |
+| `pnpm lint` / `pnpm lint:fix`              | ESLint                                    |
+| `pnpm format` / `pnpm format:check`        | Prettier                                  |
+| `pnpm test` / `test:run` / `test:coverage` | Unit a komponentové testy (Vitest)        |
+| `pnpm test:e2e`                            | E2E testy (Playwright), desktop i mobil   |
+| `pnpm storybook` / `build-storybook`       | Katalog komponent (http://localhost:6006) |
 
 ## Dokumentace
 

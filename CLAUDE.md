@@ -43,13 +43,14 @@ pnpm lint            # ESLint, selže i na varování (lint:fix opraví, co jde)
 pnpm format          # Prettier (format:check jen kontroluje)
 pnpm test            # Vitest ve watch módu (test:run jednorázově, test:coverage s pokrytím)
 pnpm test:e2e        # Playwright proti produkčnímu buildu, desktop + mobile
+pnpm storybook       # Storybook na http://localhost:6006 (build-storybook pro statický build)
 ```
 
 Před dokončením změny musí projít `typecheck`, `lint`, `format:check` a `test:run` (totéž hlídá CI).
 Git hooky (lefthook) to částečně dělají samy: pre-commit lint + formát, pre-push typecheck + testy.
 Hooky neobcházet (`--no-verify`).
 
-Doplnit, až budou existovat: Storybook (fáze 2), generování API klienta (fáze 4).
+Doplnit, až bude existovat: generování API klienta (fáze 4).
 
 ## Konvence
 
@@ -58,12 +59,29 @@ Doplnit, až budou existovat: Storybook (fáze 2), generování API klienta (fá
   pevné barvy maker – bílkoviny modrá, sacharidy oranžová, tuky žlutá/amber, vláknina fialová
 - Karty bílé se stínem úrovně 1, zaoblení `rounded-lg` (16 px), progress bary „pill“, žádné těžké
   okraje; mobile-first (4sloupcový grid), desktop 12 sloupců do 1140 px
-- Každá komponenta v `src/components/` má svou story a test
+- **Komponenty** (`src/components/<Name>/`): `Name.tsx`, `Name.stories.tsx`, `Name.test.tsx`,
+  `index.ts`. Soubor komponenty exportuje jen komponenty – sdílené třídy a helpery do vlastního
+  `.ts` (kvůli Fast Refresh). Dostupné: `Icon`, `Button`, `IconButton`, `Card`, `Spinner`,
+  `TextField`, `SelectField`, `CalorieRing`, `MacroProgressBar`, `MacroRing`, `MacroChip`,
+  `LogItem`, `MealGroup` – před psaním nové komponenty zkontrolovat Storybook.
+- **Testy komponent** vykreslují stories přes `composeStories` (story = ukázka i testovací případ);
+  pro vlastní `onClick` apod. vykreslit komponentu přímo se `Story.args` (typy spy ze Storybooku
+  nesedí s Vitestem 5). Texty z `Intl` porovnávat přes `plainSpaces()` z `@/test/text`.
+- **Přístupnost:** interaktivní prvky vždy s přístupným názvem (`IconButton` má povinný `label`),
+  průběh jako `role="meter"` s `aria-valuetext`; nové stories zkontrolovat v panelu Accessibility.
+- **Třídy** skládat přes `cx()` z `@/lib/cx` (bez tailwind-merge – konfliktní třídy
+  nekombinovat, `className` u komponent je pro layout). Ikony: `<Icon name="…" />`; novou ikonu
+  přidat do registru `src/components/Icon/icons.ts` (jen registrované jdou do bundlu).
+- **Barvy maker:** `macroClasses` z `src/components/Macro/macros.ts` – základní barva (`fill`,
+  `stroke`) na pruhy a prstence, `-strong` varianta (`text`) na text (oranžová a amber nesplňují
+  kontrast)
 - Obrazovky a jejich logika patří do `src/features/<doména>/`; feature neimportuje z jiné feature
 - Typy entit se berou z vygenerovaného klienta v `src/api/`, ne ručně
 - Aplikace je vícejazyčná (cs + en, `react-i18next`, ADR 0003): žádné texty pro uživatele natvrdo,
   vždy přes překladové klíče v obou jazycích; čísla a data formátovat podle jazyka (`Intl`).
-  Kód, názvy komponent a Storybook jsou anglicky.
+  Kód, názvy komponent a Storybook jsou anglicky. Texty v `src/i18n/locales/{en,cs}.ts` (klíče
+  typované z `en.ts`), `useTranslation()` + `useFormatters()` z `@/i18n/format`. Pozor na české
+  pády – raději celé věty na klíč než skládání slov.
 
 ## Co nedělat
 
@@ -85,6 +103,7 @@ Doplnit, až budou existovat: Storybook (fáze 2), generování API klienta (fá
 - **Malé, postupné kroky.** Jedna změna najednou, pracovat po fázích podle `docs/frontend-plan.md`.
 - **Před větší implementací navrhnout plán** a počkat na schválení.
 - **Ptát se u nejasností** a rozhodnutí (pojmenování, knihovny) místo předpokládání.
-- **Vždy potvrdit před `git commit`**, a znovu zvlášť před `git push`.
+- **Vždy potvrdit před `git commit`**, a znovu zvlášť před `git push`. Výjimka: uvnitř schválené
+  fáze commitovat každý krok bez ptaní a pushnout až na konci fáze.
 - Po změně rozhodnutí aktualizovat příslušný dokument v `docs/`; na konci práce aktualizovat
   `docs/progress.md`.

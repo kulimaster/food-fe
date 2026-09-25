@@ -55,7 +55,7 @@ Souhrn dohodnutých technologií a postupu pro React frontend aplikace NutriPlan
 1. ✅ **Založení projektu:** Vite + React + TS (strict) + Tailwind s tokeny, ESLint, Prettier,
    Vitest, Playwright, git hooky, `.env.example` s typovou validací, CI workflow, Dependabot.
    Testy a kvalita od začátku, ne až na konci.
-2. **Design systém** – každá komponenta se story a testem:
+2. ✅ **Design systém** – každá komponenta se story a testem:
    1. Storybook (+ addon a11y, ukázka tokenů), build Storybooku v CI
    2. i18n: react-i18next, překlady cs/en s typovou kontrolou klíčů, formátování čísel a dat,
       přepínač jazyka ve Storybooku
