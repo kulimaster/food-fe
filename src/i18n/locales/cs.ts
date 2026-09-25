@@ -40,6 +40,15 @@ export const cs = {
     dinner: 'Večeře',
     snack: 'Svačina',
   },
+  mealLog: {
+    addTo: {
+      breakfast: 'Přidat snídani',
+      lunch: 'Přidat oběd',
+      dinner: 'Přidat večeři',
+      snack: 'Přidat svačinu',
+    },
+    remove: 'Odebrat {{name}}',
+  },
   items_one: '{{count}} položka',
   items_few: '{{count}} položky',
   items_many: '{{count}} položky',

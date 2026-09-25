@@ -40,6 +40,15 @@ export const en = {
     dinner: 'Dinner',
     snack: 'Snack',
   },
+  mealLog: {
+    addTo: {
+      breakfast: 'Add breakfast',
+      lunch: 'Add lunch',
+      dinner: 'Add dinner',
+      snack: 'Add snack',
+    },
+    remove: 'Remove {{name}}',
+  },
   items_one: '{{count}} item',
   items_other: '{{count}} items',
 }

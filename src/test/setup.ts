@@ -9,4 +9,6 @@ setProjectAnnotations([previewAnnotations])
 
 afterEach(() => {
   cleanup()
+  // Stories mounted with `Story.run()` aren't tracked by Testing Library's cleanup
+  document.body.innerHTML = ''
 })
