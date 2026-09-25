@@ -16,7 +16,12 @@ Souhrn dohodnutých technologií a postupu pro React frontend aplikace NutriPlan
   - Styl: moderní, čistý, „clean-plate" – hodně prostoru, bílé karty s jemnými stíny, zaoblení
   - Barvy: primární smaragdová; makra – bílkoviny modrá, sacharidy oranžová, tuky žlutá/amber,
     vláknina fialová
-  - Font: Inter; ikony Material Symbols (viz „Zbývá rozhodnout")
+  - Font: Inter
+  - Ikony: Material Symbols (stejné jako v prototypu) jako **SVG, ne webfont** –
+    `@material-symbols/svg-400` + `vite-plugin-svgr`, vše přes vlastní komponentu `<Icon>`
+    (velikost, barva, přístupnost na jednom místě). Webfont zamítnut (stahuje všechny ikony,
+    problikává text názvu, horší přístupnost, bez typové kontroly); Lucide zamítnut (jiný styl
+    než prototyp, chybí část ikon)
   - Mobile-first, prototyp má každou obrazovku ve verzi mobile i desktop
 - **Nástroj pro vývoj:** Claude Code (přes `additionalDirectories` vidí i `../food-be`)
 
@@ -91,7 +96,6 @@ bylo potřeba ověřit. Bez dohody se neimplementují.
       zatím nepotvrzeno a vědomě odloženo. Na frontendu pak volba ukládání tokenu a refresh.
 - [ ] Jazyk UI: čeština, angličtina, nebo i18n od začátku (prototyp je anglicky)
 - [ ] Hosting frontendu (backend: viz `food-be/docs/deployment.md`)
-- [ ] Ikony: Material Symbols jako v prototypu (webfont), nebo knihovna SVG ikon (např. Lucide)
 - [ ] Planner a Shopping List: jedna obrazovka jako v prototypu, nebo dvě
 - [ ] Prvky prototypu mimo rozsah (hydratace, recept dne, týdenní trend): dělat, nebo vynechat
 - [ ] Návrh chybějících obrazovek (Profile, Log Meal, Activity Log)

@@ -45,8 +45,11 @@ Poslední aktualizace: 2026-09-25
 
 **Fáze 2 – design systém:** Storybook (+ addon a11y), logo jako favicon, základní komponenty podle
 prototypu (kalorický prstenec, progress bary a prstence maker, makro čipy, tlačítka, karty, položka
-logu, formulářové prvky), každá se story a testem. Předem rozhodnout ikony (Material Symbols vs.
-Lucide).
+logu, formulářové prvky), každá se story a testem. Ikony: Material Symbols jako SVG přes komponentu
+`<Icon>` (rozhodnuto 2026-09-25, viz frontend-plan.md) – fázi 2 začít jejich zavedením.
+
+Poznámka k CI: E2E v CI zamrzalo, když Playwright spouštěl server přes `pnpm build`/`pnpm preview`
+(vite preview se po testech neukončil). Proto `webServer` volá `tsc`/`vite` napřímo – neměnit zpět.
 
 ## Otevřené body
 
