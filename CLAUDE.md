@@ -61,6 +61,9 @@ Doplnit, až budou existovat: Storybook (fáze 2), generování API klienta (fá
 - Každá komponenta v `src/components/` má svou story a test
 - Obrazovky a jejich logika patří do `src/features/<doména>/`; feature neimportuje z jiné feature
 - Typy entit se berou z vygenerovaného klienta v `src/api/`, ne ručně
+- Aplikace je vícejazyčná (cs + en, `react-i18next`, ADR 0003): žádné texty pro uživatele natvrdo,
+  vždy přes překladové klíče v obou jazycích; čísla a data formátovat podle jazyka (`Intl`).
+  Kód, názvy komponent a Storybook jsou anglicky.
 
 ## Co nedělat
 

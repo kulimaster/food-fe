@@ -23,6 +23,9 @@ Souhrn dohodnutých technologií a postupu pro React frontend aplikace NutriPlan
     problikává text názvu, horší přístupnost, bez typové kontroly); Lucide zamítnut (jiný styl
     než prototyp, chybí část ikon)
   - Mobile-first, prototyp má každou obrazovku ve verzi mobile i desktop
+- **Jazyk:** aplikace vícejazyčná od začátku – čeština a angličtina s přepínáním, `react-i18next`;
+  výchozí podle prohlížeče, jinak angličtina ([ADR 0003](decisions/0003-i18n-react-i18next.md)).
+  Kód, názvy komponent a Storybook anglicky.
 - **Nástroj pro vývoj:** Claude Code (přes `additionalDirectories` vidí i `../food-be`)
 
 ## Stack
@@ -42,6 +45,8 @@ Souhrn dohodnutých technologií a postupu pro React frontend aplikace NutriPlan
 | E2E testy                 | Playwright                                                                  | Klíčové uživatelské scénáře v prohlížeči                 |
 | Git hooky                 | lefthook                                                                    | Lint a formát před commitem, testy před pushem           |
 | Proměnné prostředí        | Zod (`src/env.ts`)                                                          | Validace `VITE_*` proměnných při startu                  |
+| Vícejazyčnost             | react-i18next + i18next, `Intl`                                             | Překlady cs/en, formát čísel a dat podle jazyka          |
+| Ikony                     | Material Symbols (`@material-symbols/svg-400` + `vite-plugin-svgr`)         | Ikony jako React komponenty přes `<Icon>`                |
 | CI                        | GitHub Actions                                                              | Typecheck, lint, testy, build na každý PR                |
 | Závislosti                | Dependabot                                                                  | Pravidelné aktualizace                                   |
 
@@ -50,11 +55,17 @@ Souhrn dohodnutých technologií a postupu pro React frontend aplikace NutriPlan
 1. ✅ **Založení projektu:** Vite + React + TS (strict) + Tailwind s tokeny, ESLint, Prettier,
    Vitest, Playwright, git hooky, `.env.example` s typovou validací, CI workflow, Dependabot.
    Testy a kvalita od začátku, ne až na konci.
-2. **Design systém:** Storybook, logo jako favicon a základní komponenty (kalorický prstenec,
-   progress bary a prstence maker, makro čipy, tlačítka, karty, položka logu, formulářové prvky),
-   vše rovnou ve Storybooku a s testy
+2. **Design systém** – každá komponenta se story a testem:
+   1. Storybook (+ addon a11y, ukázka tokenů), build Storybooku v CI
+   2. i18n: react-i18next, překlady cs/en s typovou kontrolou klíčů, formátování čísel a dat,
+      přepínač jazyka ve Storybooku
+   3. Ikony (`<Icon>`) a logo jako favicon
+   4. Základní prvky: `Button`, `Card`, formulářové prvky (`Input`, `Select`, `Label`, chyba)
+   5. Makro komponenty: `CalorieRing`, `MacroProgressBar`, `MacroRing`, `MacroChip`
+   6. Položka logu (`LogItem`) a skupina jídla
+   7. Dokumentace (`CLAUDE.md`, `progress.md`)
 3. **Kostra aplikace:** providery, routing, layout (spodní navigace na mobilu, postranní panel na
-   desktopu), error boundary, stránka 404, prázdné obrazovky
+   desktopu), přepínač jazyka, error boundary, stránka 404, prázdné obrazovky
 4. **Napojení na API:** vygenerovaný klient a typy, TanStack Query, jednotné zobrazování chyb z API,
    MSW mocky
 5. **Obrazovky postupně:**
@@ -94,7 +105,6 @@ bylo potřeba ověřit. Bez dohody se neimplementují.
 
 - [ ] Autentizace: backend navrhuje ASP.NET Core Identity + JWT (`food-be/docs/architecture.md`),
       zatím nepotvrzeno a vědomě odloženo. Na frontendu pak volba ukládání tokenu a refresh.
-- [ ] Jazyk UI: čeština, angličtina, nebo i18n od začátku (prototyp je anglicky)
 - [ ] Hosting frontendu (backend: viz `food-be/docs/deployment.md`)
 - [ ] Planner a Shopping List: jedna obrazovka jako v prototypu, nebo dvě
 - [ ] Prvky prototypu mimo rozsah (hydratace, recept dne, týdenní trend): dělat, nebo vynechat
