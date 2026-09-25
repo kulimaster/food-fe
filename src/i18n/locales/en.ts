@@ -6,6 +6,9 @@ export const en = {
   app: {
     comingSoon: 'Coming soon.',
   },
+  status: {
+    loading: 'Loading…',
+  },
   language: {
     label: 'Language',
     cs: 'Čeština',

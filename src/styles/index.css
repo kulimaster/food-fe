@@ -2,6 +2,12 @@
 @import 'tailwindcss';
 @import './theme.css';
 
+/*
+ * Always scan all app sources explicitly: automatic detection misses files that the Storybook
+ * dev server loads on demand (stories), which left their classes without CSS.
+ */
+@source '../';
+
 /* Stitch prototype HTML is reference material, not app code – don't generate classes from it */
 @source not '../../prototype';
 
