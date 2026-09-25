@@ -1,4 +1,6 @@
 import type { Preview } from '@storybook/react-vite'
+import { isSupportedLanguage } from '../src/i18n/config'
+import { i18n } from '../src/i18n'
 import '../src/styles/index.css'
 
 const preview: Preview = {
@@ -35,9 +37,34 @@ const preview: Preview = {
       test: 'error',
     },
   },
+  globalTypes: {
+    locale: {
+      description: 'UI language',
+      toolbar: {
+        title: 'Language',
+        icon: 'globe',
+        items: [
+          { value: 'en', title: 'English' },
+          { value: 'cs', title: 'Čeština' },
+        ],
+        dynamicTitle: true,
+      },
+    },
+  },
   initialGlobals: {
     backgrounds: { value: 'background' },
+    locale: 'en',
   },
+  decorators: [
+    // Follow the toolbar language (not persisted, unlike setLanguage in the app)
+    (Story, { globals }) => {
+      const locale: unknown = globals.locale
+      if (isSupportedLanguage(locale) && i18n.language !== locale) {
+        void i18n.changeLanguage(locale)
+      }
+      return Story()
+    },
+  ],
 }
 
 export default preview

@@ -75,6 +75,9 @@ Doplnit, až budou existovat: Storybook (fáze 2), generování API klienta (fá
   pro vedlejší text `on-surface-variant`
 - Nekopírovat `code.html` z prototypu do `src/` jako celek; rozložit ho na komponenty
 - Neupravovat vygenerovaný kód v `src/api/` ručně
+- Nepojmenovávat soubory ve stejné složce tak, aby se lišily jen velikostí písmen a příponou
+  (`tokens.test.ts` vs. `Tokens.test.tsx`) – na Windows je TypeScript bere jako jeden a jeden
+  potichu vynechá
 - Nekopírovat backendovou dokumentaci do tohoto repa, odkazovat na ni
 
 ## Způsob práce
