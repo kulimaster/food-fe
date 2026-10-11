@@ -36,7 +36,7 @@ Souhrn dohodnutých technologií a postupu pro React frontend aplikace NutriPlan
 | ------------------------- | --------------------------------------------------------------------------- | -------------------------------------------------------- |
 | Build a vývoj             | Vite + TypeScript                                                           | Založení, spouštění a build projektu, typová kontrola    |
 | Správce balíčků           | pnpm (přes corepack)                                                        | Instalace závislostí, lockfile                           |
-| Routing                   | React Router                                                                | Přechody mezi obrazovkami                                |
+| Routing                   | React Router 8 (data mode)                                                  | Přechody mezi obrazovkami                                |
 | Data z API                | TanStack Query                                                              | Načítání dat, cache, loading a chybové stavy             |
 | Formuláře                 | React Hook Form + Zod                                                       | Formuláře a validace                                     |
 | API klient                | Generovaný z OpenAPI (`openapi-typescript` + `openapi-fetch`)               | Typy entit přímo z backendu                              |
@@ -66,7 +66,7 @@ Souhrn dohodnutých technologií a postupu pro React frontend aplikace NutriPlan
    5. Makro komponenty: `CalorieRing`, `MacroProgressBar`, `MacroRing`, `MacroChip`
    6. Položka logu (`LogItem`) a skupina jídla
    7. Dokumentace (`CLAUDE.md`, `progress.md`)
-3. **Kostra aplikace:** providery, routing, layout (spodní navigace na mobilu, postranní panel na
+3. ✅ **Kostra aplikace:** providery, routing, layout (spodní navigace na mobilu, postranní panel na
    desktopu), přepínač jazyka, error boundary, stránka 404, prázdné obrazovky
 4. **Napojení na API:** vygenerovaný klient a typy, TanStack Query, jednotné zobrazování chyb z API,
    MSW mocky

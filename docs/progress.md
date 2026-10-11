@@ -3,17 +3,16 @@
 Přehled stavu projektu, aby šlo navázat bez znovuodvozování kontextu. **Aktualizovat na konci každé
 pracovní session**: je to první věc, kterou číst, a poslední, kterou upravit.
 
-Poslední aktualizace: 2026-09-26
+Poslední aktualizace: 2026-10-11
 
 ## Co existuje
 
-**Fáze 1 (založení projektu) a fáze 2 (design systém) jsou hotové.**
+**Fáze 1 (založení projektu), 2 (design systém) a 3 (kostra aplikace) jsou hotové.**
 
 ### Základ (fáze 1)
 
 - **Projekt:** Vite 8, React 19, TypeScript 6 (strict + `noUncheckedIndexedAccess`), alias `@/`,
-  pnpm 12 (`packageManager`), Node 24 (`.nvmrc`). Aplikace je zatím jen zástupná stránka
-  (`src/app/App.tsx`).
+  pnpm 12 (`packageManager`), Node 24 (`.nvmrc`).
 - **Styly:** Tailwind v4, tokeny Vitality Core v `src/styles/theme.css`. Výchozí barvy, fonty,
   zaoblení a stíny Tailwindu jsou vypnuté. Inter lokálně přes `@fontsource-variable/inter`.
 - **Kvalita:** ESLint 10 (typescript-eslint strict type-checked, react-hooks, jsx-a11y, storybook,
@@ -44,6 +43,22 @@ Poslední aktualizace: 2026-09-26
 - **Přístupnost:** axe bez porušení u všech stories; testy ověřují názvy, role a popisy.
 - **Testy:** 89 unit/komponentových testů, stories testované přes `composeStories`.
 
+### Kostra aplikace (fáze 3)
+
+- **Routing:** React Router 8 (data mode), `src/app/routes.tsx`; každá obrazovka se načítá až při
+  první návštěvě (vlastní chunk). Adresy v `paths` (`src/app/navigation.ts`): `/`, `/log`,
+  `/planner`, `/shopping-list`, `/recipes`, `/recipes/new`, `/recipes/:recipeId`, `/ingredients`,
+  `/activity`, `/profile`. Obrazovky jsou zatím prázdné (`<Page>` + „Připravujeme“).
+- **Layout** (`src/app/layout`): desktop (od `md`) postranní panel se všemi obrazovkami, mobil
+  horní lišta s logem + spodní lišta (Přehled, Plánovač, Nákup, Recepty, Více → Ingredience,
+  Aktivity, Profil). Log Meal není v menu (akce, ne místo). Odkaz „Přeskočit na obsah“, po
+  navigaci fokus na obsah, obnovení scrollu.
+- **Přepínač jazyka** dole v postranním panelu a v menu „Více“ (`LanguageSwitcher`).
+- **Chyby** (`src/app/errors`): 404 uvnitř rámu, chyba obrazovky nechá navigaci a nabídne
+  „Zkusit znovu“ / „Zpět na přehled“, chyba rámu → celostránková hláška.
+- **Testy:** 119 unit/komponentových, E2E (desktop + mobil): navigace, „Více“, jazyk vč. reloadu,
+  404, skip link.
+
 ## Rozhodnutí a poznámky
 
 - **ESLint 10:** `eslint-plugin-jsx-a11y` 6.10.2 oficiálně podporuje jen ESLint ≤ 9, ale používá jen
@@ -66,6 +81,14 @@ Poslední aktualizace: 2026-09-26
 - **Kontrast:** `outline` na text nesplňuje 4,5 : 1 na pozadí `background` – na text se nepoužívá.
 - **Hranice features:** ESLint hlídá jen importy přes `@/features/*`, relativní import do jiné
   feature neodhalí (případně později `eslint-plugin-boundaries`).
+- **Obrazovky (2026-10-11):** Shopping List je samostatná obrazovka (prototyp ji má s plánovačem),
+  hydratace se nedělá. Recept dne a týdenní trend zatím nerozhodnuto.
+- **React Router zapisuje vyřešené `lazy` trasy zpět do objektů tras** – každý router v testech
+  musí dostat vlastní kopii (`cloneRoutes` v `src/test/router.tsx`), jinak se testy ovlivňují.
+- **react-hooks 7 (`set-state-in-effect`):** nenastavovat stav v efektu; odvodit ho (např. menu
+  „Více“ si pamatuje adresu, na které bylo otevřené, a po navigaci je zavřené samo).
+- **Storybook dev server** po přidání nového souboru se stories občas hlásí
+  „importers[path] is not a function“ – stačí znovu načíst Storybook.
 - **CI E2E:** Playwright `webServer` volá `tsc`/`vite` napřímo (přes pnpm se `vite preview` po
   testech neukončil a job visel) – neměnit zpět.
 - **Zapisování souborů Claudem:** escape sekvence ` ` se při zápisu přes nástroje převádějí na
@@ -73,11 +96,12 @@ Poslední aktualizace: 2026-09-26
 
 ## Další krok
 
-**Fáze 3 – kostra aplikace:** providery, routing (React Router), layout (spodní navigace na mobilu,
-postranní panel na desktopu podle prototypu), přepínač jazyka, error boundary, stránka 404, prázdné
-obrazovky. Před začátkem navrhnout plán a nechat schválit. Otevřené otázky, které fázi 3 ovlivní:
-Planner + Shopping List jako jedna, nebo dvě obrazovky (navigace), a co s prvky prototypu mimo
-rozsah (hydratace, recept dne, týdenní trend).
+**Fáze 4 – napojení na API:** vygenerovaný klient a typy z OpenAPI backendu
+(`openapi-typescript` + `openapi-fetch`), TanStack Query, jednotné zobrazování chyb z API, MSW
+mocky (testy, Storybook, vývoj bez backendu). Před začátkem ověřit stav backendu
+(`../food-be/docs/progress.md`, které endpointy existují, jak spustit `food-api` a kde je OpenAPI
+dokument) a navrhnout plán ke schválení. Autentizace je až fáze 6 – backend ji zatím nemá
+(`UserId` se posílá v těle požadavku); s tím počítat v klientovi.
 
 ## Otevřené body
 

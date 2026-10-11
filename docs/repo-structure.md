@@ -43,7 +43,8 @@ food-fe/
 ├── public/
 ├── e2e/                       ← Playwright testy
 ├── src/
-│   ├── app/                   ← providery (QueryClient, Router), layout, error boundary, 404
+│   ├── app/                   ← routes.tsx, navigation.ts (paths, menu), layout/ (AppShell,
+│   │                             navigace, přepínač jazyka), errors/ (404, error boundary)
 │   ├── api/                   ← vygenerovaný API klient a typy (needitovat ručně)
 │   ├── components/            ← design systém; každá komponenta ve vlastní složce:
 │   │   └── Button/            ←   Button.tsx, Button.stories.tsx, Button.test.tsx, index.ts
@@ -63,7 +64,6 @@ food-fe/
 │   ├── test/                  ← setup pro Vitest (vč. Storybook anotací), test utils
 │   ├── env.ts                 ← typově ověřené proměnné prostředí (Zod)
 │   ├── vite-env.d.ts          ← typy import.meta.env
-│   ├── routes.tsx
 │   └── main.tsx
 ├── .editorconfig
 ├── .env.example               ← vzor proměnných prostředí; lokálně .env.local (necommituje se)

@@ -61,7 +61,8 @@ Doplnit, až bude existovat: generování API klienta (fáze 4).
   okraje; mobile-first (4sloupcový grid), desktop 12 sloupců do 1140 px
 - **Komponenty** (`src/components/<Name>/`): `Name.tsx`, `Name.stories.tsx`, `Name.test.tsx`,
   `index.ts`. Soubor komponenty exportuje jen komponenty – sdílené třídy a helpery do vlastního
-  `.ts` (kvůli Fast Refresh). Dostupné: `Icon`, `Button`, `IconButton`, `Card`, `Spinner`,
+  `.ts` (kvůli Fast Refresh). Dostupné: `Icon`, `Button`, `ButtonLink`, `IconButton`, `Card`,
+  `Spinner`, `Page`,
   `TextField`, `SelectField`, `CalorieRing`, `MacroProgressBar`, `MacroRing`, `MacroChip`,
   `LogItem`, `MealGroup` – před psaním nové komponenty zkontrolovat Storybook.
 - **Testy komponent** vykreslují stories přes `composeStories` (story = ukázka i testovací případ);
@@ -76,6 +77,12 @@ Doplnit, až bude existovat: generování API klienta (fáze 4).
   `stroke`) na pruhy a prstence, `-strong` varianta (`text`) na text (oranžová a amber nesplňují
   kontrast)
 - Obrazovky a jejich logika patří do `src/features/<doména>/`; feature neimportuje z jiné feature
+- **Routing** (React Router 8, data mode): adresy jen přes `paths` z `src/app/navigation.ts`, nikdy
+  natvrdo. Nová obrazovka = komponenta `<X>Page` ve feature (obalená `<Page title>` – nadpis +
+  titulek záložky), lazy route v `src/app/routes.tsx` a případně položka v `navItems` (+ překlad
+  `nav.*`). Rám aplikace, navigace a chybové stavy jsou v `src/app/layout` a `src/app/errors`.
+- **Testy obrazovek** přes `renderRoute(path)` z `@/test/router` (celá aplikace v paměťovém
+  routeru). Testy začínají anglicky s prázdným `localStorage` (reset v `src/test/setup.ts`).
 - Typy entit se berou z vygenerovaného klienta v `src/api/`, ne ručně
 - Aplikace je vícejazyčná (cs + en, `react-i18next`, ADR 0003): žádné texty pro uživatele natvrdo,
   vždy přes překladové klíče v obou jazycích; čísla a data formátovat podle jazyka (`Intl`).
