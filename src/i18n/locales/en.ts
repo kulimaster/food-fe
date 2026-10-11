@@ -11,6 +11,7 @@ export const en = {
     logMeal: 'Log meal',
     planner: 'Planner',
     shoppingList: 'Shopping list',
+    shoppingListShort: 'Shopping',
     recipes: 'Recipes',
     newRecipe: 'New recipe',
     editRecipe: 'Edit recipe',
@@ -18,6 +19,9 @@ export const en = {
     activity: 'Activity',
     profile: 'Profile',
     more: 'More',
+    main: 'Main navigation',
+    skipToContent: 'Skip to content',
+    home: 'NutriPlan – dashboard',
   },
   status: {
     loading: 'Loading…',

@@ -11,6 +11,7 @@ export const cs = {
     logMeal: 'Zapsat jídlo',
     planner: 'Plánovač',
     shoppingList: 'Nákupní seznam',
+    shoppingListShort: 'Nákup',
     recipes: 'Recepty',
     newRecipe: 'Nový recept',
     editRecipe: 'Upravit recept',
@@ -18,6 +19,9 @@ export const cs = {
     activity: 'Aktivity',
     profile: 'Profil',
     more: 'Více',
+    main: 'Hlavní navigace',
+    skipToContent: 'Přeskočit na obsah',
+    home: 'NutriPlan – přehled',
   },
   status: {
     loading: 'Načítání…',

@@ -1,6 +1,6 @@
 import type { RouteObject } from 'react-router'
 import { Spinner } from '@/components/Spinner'
-import { RootLayout } from './RootLayout'
+import { AppShell } from './layout/AppShell'
 
 /**
  * All routes. Screens are code-split: each is loaded the first time it's visited.
@@ -9,7 +9,7 @@ import { RootLayout } from './RootLayout'
 export const routes: RouteObject[] = [
   {
     path: '/',
-    Component: RootLayout,
+    Component: AppShell,
     // Shown while the first screen's code loads
     hydrateFallbackElement: (
       <div className="flex min-h-dvh items-center justify-center text-primary">
