@@ -3,6 +3,7 @@ import { NavLink } from 'react-router'
 import { Icon } from '@/components/Icon'
 import { cx } from '@/lib/cx'
 import { navItems } from '../navigation'
+import { LanguageSwitcher } from './LanguageSwitcher'
 import { Logo } from './Logo'
 
 /** Desktop navigation: logo and every screen, as in the desktop prototype. */
@@ -43,6 +44,7 @@ export function Sidebar({ className }: { className?: string }) {
           ))}
         </ul>
       </nav>
+      <LanguageSwitcher className="mt-auto px-sm" />
     </aside>
   )
 }

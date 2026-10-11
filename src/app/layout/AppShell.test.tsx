@@ -80,6 +80,25 @@ describe('AppShell', () => {
     expect(more).toHaveAttribute('aria-expanded', 'false')
   })
 
+  it('switching the language in the "More" menu translates the whole app', async () => {
+    renderRoute('/planner')
+    await screen.findByRole('heading', { level: 1, name: 'Planner' })
+    const { sidebar, bottomBar } = navigations()
+
+    expect(
+      within(screen.getByRole('complementary')).getByRole('group', { name: 'Language' }),
+    ).toBeInTheDocument()
+    await userEvent.click(within(bottomBar).getByRole('button', { name: 'More' }))
+    await userEvent.click(within(bottomBar).getByRole('radio', { name: 'Čeština' }))
+
+    expect(await screen.findByRole('heading', { level: 1, name: 'Plánovač' })).toBeInTheDocument()
+    expect(within(sidebar).getByRole('link', { name: 'Nákupní seznam' })).toBeInTheDocument()
+    expect(within(bottomBar).getByRole('link', { name: 'Nákup' })).toBeInTheDocument()
+    await waitFor(() => {
+      expect(document.title).toBe('Plánovač · NutriPlan')
+    })
+  })
+
   it('offers a skip link to the main content', async () => {
     renderRoute('/')
     await screen.findByRole('heading', { level: 1, name: 'Dashboard' })

@@ -4,6 +4,7 @@ import { NavLink, useLocation } from 'react-router'
 import { Icon, type IconName } from '@/components/Icon'
 import { cx } from '@/lib/cx'
 import { navItems } from '../navigation'
+import { LanguageSwitcher } from './LanguageSwitcher'
 
 const barItems = navItems.filter((item) => item.mobile === 'bar')
 const moreItems = navItems.filter((item) => item.mobile === 'more')
@@ -102,30 +103,35 @@ export function BottomNav({ className }: { className?: string }) {
           <TabContent icon="more_horiz" label={t('nav.more')} active={isMoreActive} />
         </button>
         {moreOpen && (
-          <ul
+          <div
             id={menuId}
-            className="absolute right-sm bottom-full mb-sm flex w-60 flex-col gap-xs rounded-lg bg-surface-container-lowest p-sm shadow-floating"
+            className="absolute right-sm bottom-full mb-sm flex w-64 flex-col gap-sm rounded-lg bg-surface-container-lowest p-sm shadow-floating"
           >
-            {moreItems.map((item) => (
-              <li key={item.key}>
-                <NavLink
-                  to={item.path}
-                  className={({ isActive }) =>
-                    cx(
-                      'flex items-center gap-md rounded-lg px-md py-sm text-label-md transition-colors',
-                      'outline-primary focus-visible:outline-2 focus-visible:-outline-offset-2',
-                      isActive
-                        ? 'bg-primary-container text-on-primary-container'
-                        : 'text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface',
-                    )
-                  }
-                >
-                  <Icon name={item.icon} />
-                  {t(`nav.${item.key}`)}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
+            <ul className="flex flex-col gap-xs">
+              {moreItems.map((item) => (
+                <li key={item.key}>
+                  <NavLink
+                    to={item.path}
+                    className={({ isActive }) =>
+                      cx(
+                        'flex items-center gap-md rounded-lg px-md py-sm text-label-md transition-colors',
+                        'outline-primary focus-visible:outline-2 focus-visible:-outline-offset-2',
+                        isActive
+                          ? 'bg-primary-container text-on-primary-container'
+                          : 'text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface',
+                      )
+                    }
+                  >
+                    <Icon name={item.icon} />
+                    {t(`nav.${item.key}`)}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+            <div className="border-t border-divider px-xs pt-sm">
+              <LanguageSwitcher />
+            </div>
+          </div>
         )}
       </div>
     </nav>
