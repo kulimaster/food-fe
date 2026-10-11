@@ -23,6 +23,18 @@ export const cs = {
     skipToContent: 'Přeskočit na obsah',
     home: 'NutriPlan – přehled',
   },
+  errors: {
+    notFound: {
+      title: 'Stránka nenalezena',
+      text: 'Hledaná stránka neexistuje nebo byla přesunuta.',
+    },
+    generic: {
+      title: 'Něco se pokazilo',
+      text: 'Došlo k neočekávané chybě. Zkuste to znovu, nebo se vraťte na přehled.',
+    },
+    retry: 'Zkusit znovu',
+    backToDashboard: 'Zpět na přehled',
+  },
   status: {
     loading: 'Načítání…',
   },

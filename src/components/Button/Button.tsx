@@ -2,15 +2,13 @@ import type { ComponentProps } from 'react'
 import { Icon, type IconName } from '@/components/Icon'
 import { Spinner } from '@/components/Spinner'
 import { cx } from '@/lib/cx'
-import { buttonBaseClasses, type ButtonVariant, buttonVariantClasses } from './buttonStyles'
-
-const sizeClasses = {
-  sm: 'h-9 gap-xs px-md',
-  md: 'h-11 gap-sm px-lg', // 44px – minimum comfortable touch target
-  lg: 'h-14 gap-sm px-xl',
-} as const
-
-export type ButtonSize = keyof typeof sizeClasses
+import {
+  buttonBaseClasses,
+  type ButtonSize,
+  buttonSizeClasses,
+  type ButtonVariant,
+  buttonVariantClasses,
+} from './buttonStyles'
 
 export interface ButtonProps extends ComponentProps<'button'> {
   variant?: ButtonVariant
@@ -47,7 +45,7 @@ export function Button({
         buttonBaseClasses,
         'rounded-lg',
         buttonVariantClasses[variant],
-        sizeClasses[size],
+        buttonSizeClasses[size],
         fullWidth && 'w-full',
         loading && 'relative',
         className,

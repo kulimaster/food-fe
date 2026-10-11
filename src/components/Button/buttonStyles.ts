@@ -16,3 +16,12 @@ export const buttonVariantClasses = {
 } as const
 
 export type ButtonVariant = keyof typeof buttonVariantClasses
+
+/** Heights and paddings of text buttons (Button, ButtonLink) */
+export const buttonSizeClasses = {
+  sm: 'h-9 gap-xs px-md',
+  md: 'h-11 gap-sm px-lg', // 44px – minimum comfortable touch target
+  lg: 'h-14 gap-sm px-xl',
+} as const
+
+export type ButtonSize = keyof typeof buttonSizeClasses

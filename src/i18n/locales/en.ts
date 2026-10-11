@@ -23,6 +23,18 @@ export const en = {
     skipToContent: 'Skip to content',
     home: 'NutriPlan – dashboard',
   },
+  errors: {
+    notFound: {
+      title: 'Page not found',
+      text: 'The page you are looking for does not exist or has been moved.',
+    },
+    generic: {
+      title: 'Something went wrong',
+      text: 'An unexpected error occurred. Try again, or go back to the dashboard.',
+    },
+    retry: 'Try again',
+    backToDashboard: 'Go to dashboard',
+  },
   status: {
     loading: 'Loading…',
   },

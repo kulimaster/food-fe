@@ -38,6 +38,7 @@ import MoreHoriz from '@material-symbols/svg-400/outlined/more_horiz.svg?react'
 import MoreVert from '@material-symbols/svg-400/outlined/more_vert.svg?react'
 import Notifications from '@material-symbols/svg-400/outlined/notifications.svg?react'
 import Person from '@material-symbols/svg-400/outlined/person.svg?react'
+import Refresh from '@material-symbols/svg-400/outlined/refresh.svg?react'
 import Remove from '@material-symbols/svg-400/outlined/remove.svg?react'
 import Restaurant from '@material-symbols/svg-400/outlined/restaurant.svg?react'
 import Search from '@material-symbols/svg-400/outlined/search.svg?react'
@@ -89,6 +90,7 @@ export const icons = {
   more_vert: MoreVert,
   notifications: Notifications,
   person: Person,
+  refresh: Refresh,
   remove: Remove,
   restaurant: Restaurant,
   search: Search,
