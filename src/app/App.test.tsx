@@ -3,9 +3,9 @@ import { describe, expect, it } from 'vitest'
 import { App } from './App'
 
 describe('App', () => {
-  it('renders the app name as the main heading', () => {
+  it('opens the dashboard at the root URL', async () => {
     render(<App />)
 
-    expect(screen.getByRole('heading', { level: 1, name: 'NutriPlan' })).toBeInTheDocument()
+    expect(await screen.findByRole('heading', { level: 1, name: 'Dashboard' })).toBeInTheDocument()
   })
 })

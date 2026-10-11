@@ -6,6 +6,19 @@ export const cs = {
   app: {
     comingSoon: 'Připravujeme.',
   },
+  nav: {
+    dashboard: 'Přehled',
+    logMeal: 'Zapsat jídlo',
+    planner: 'Plánovač',
+    shoppingList: 'Nákupní seznam',
+    recipes: 'Recepty',
+    newRecipe: 'Nový recept',
+    editRecipe: 'Upravit recept',
+    ingredients: 'Ingredience',
+    activity: 'Aktivity',
+    profile: 'Profil',
+    more: 'Více',
+  },
   status: {
     loading: 'Načítání…',
   },

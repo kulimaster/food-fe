@@ -6,6 +6,19 @@ export const en = {
   app: {
     comingSoon: 'Coming soon.',
   },
+  nav: {
+    dashboard: 'Dashboard',
+    logMeal: 'Log meal',
+    planner: 'Planner',
+    shoppingList: 'Shopping list',
+    recipes: 'Recipes',
+    newRecipe: 'New recipe',
+    editRecipe: 'Edit recipe',
+    ingredients: 'Ingredients',
+    activity: 'Activity',
+    profile: 'Profile',
+    more: 'More',
+  },
   status: {
     loading: 'Loading…',
   },

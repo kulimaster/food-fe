@@ -26,6 +26,8 @@ Souhrn dohodnutých technologií a postupu pro React frontend aplikace NutriPlan
 - **Jazyk:** aplikace vícejazyčná od začátku – čeština a angličtina s přepínáním, `react-i18next`;
   výchozí podle prohlížeče, jinak angličtina ([ADR 0003](decisions/0003-i18n-react-i18next.md)).
   Kód, názvy komponent a Storybook anglicky.
+- **Obrazovky:** Weekly Planner a Shopping List jsou dvě samostatné obrazovky (prototyp je má na
+  jedné); hydratace z prototypu se nedělá (2026-10-11)
 - **Nástroj pro vývoj:** Claude Code (přes `additionalDirectories` vidí i `../food-be`)
 
 ## Stack
@@ -86,26 +88,25 @@ Souhrn dohodnutých technologií a postupu pro React frontend aplikace NutriPlan
 Předlohou UI je export ze Google Stitch v `prototype/` (každá obrazovka `mobile/` a `desktop/`,
 v každé `code.html` + `screen.png`):
 
-| Obrazovka v plánu              | Prototyp                                                         |
-| ------------------------------ | ---------------------------------------------------------------- |
-| Dashboard                      | `daily-dashboard/`                                               |
-| Ingredients                    | `ingredients-database/`                                          |
-| Recipes (recipe builder)       | `recipe-builder/`                                                |
-| Weekly Planner + Shopping List | `weekly-planner-shopping-list/` (v prototypu na jedné obrazovce) |
-| Přihlášení / onboarding        | `login-onboarding/`                                              |
-| Profile                        | chybí – navrhnout ve stylu Vitality Core                         |
-| Log Meal                       | chybí – v dashboardu jen tlačítko „Log Food"                     |
-| Activity Log                   | chybí                                                            |
+| Obrazovka v plánu              | Prototyp                                                                  |
+| ------------------------------ | ------------------------------------------------------------------------- |
+| Dashboard                      | `daily-dashboard/`                                                        |
+| Ingredients                    | `ingredients-database/`                                                   |
+| Recipes (recipe builder)       | `recipe-builder/`                                                         |
+| Weekly Planner + Shopping List | `weekly-planner-shopping-list/` – v aplikaci **dvě samostatné obrazovky** |
+| Přihlášení / onboarding        | `login-onboarding/`                                                       |
+| Profile                        | chybí – navrhnout ve stylu Vitality Core                                  |
+| Log Meal                       | chybí – v dashboardu jen tlačítko „Log Food"                              |
+| Activity Log                   | chybí                                                                     |
 
-Prototyp obsahuje i prvky mimo dohodnutý rozsah (hydratace / příjem vody, „Recipe of the Day",
-týdenní trend). Hydrataci backend nemá vůbec (žádná entita ani endpoint); recept dne a trend by
-bylo potřeba ověřit. Bez dohody se neimplementují.
+Prototyp obsahuje i prvky mimo dohodnutý rozsah. **Hydratace (příjem vody) se nedělá** (rozhodnuto
+2026-10-11; backend ji ani nepodporuje). „Recipe of the Day" a týdenní trend zatím nerozhodnuto –
+bez dohody se neimplementují.
 
 ## Zbývá rozhodnout
 
 - [ ] Autentizace: backend navrhuje ASP.NET Core Identity + JWT (`food-be/docs/architecture.md`),
       zatím nepotvrzeno a vědomě odloženo. Na frontendu pak volba ukládání tokenu a refresh.
 - [ ] Hosting frontendu (backend: viz `food-be/docs/deployment.md`)
-- [ ] Planner a Shopping List: jedna obrazovka jako v prototypu, nebo dvě
-- [ ] Prvky prototypu mimo rozsah (hydratace, recept dne, týdenní trend): dělat, nebo vynechat
+- [ ] Prvky prototypu mimo rozsah: recept dne a týdenní trend – dělat, nebo vynechat
 - [ ] Návrh chybějících obrazovek (Profile, Log Meal, Activity Log)
